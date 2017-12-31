@@ -4,7 +4,7 @@ switch = {
   'c': lambda x: x - 2
 }
 
-calulation = raw_input("Choose calculation: ")
-factor = raw_input("Enter a factor: ")
+calulation = input("Choose calculation: ")
+factor = input("Enter a factor: ")
 
-print "Result: ", switch[calulation](int(factor))
+print ("Result: ", switch[calulation](int(factor)))

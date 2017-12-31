@@ -65,7 +65,7 @@ print "Lambda add5:", add5(10)
 
 ## Examples
 
-* [Functions](examples/functions.py)
+* [Functions](../examples/functions.py)
 
 ## Summary
 

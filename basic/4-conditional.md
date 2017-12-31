@@ -32,8 +32,8 @@ else:
 
 ## Examples
 
-* [if/else/Elif](examples/conditionals.py)
-* [switch/case alternative](examples/switch-alternative.py)
+* [if/else/Elif](../examples/conditionals.py)
+* [switch/case alternative](../examples/switch-alternative.py)
 
 ## Summary
 

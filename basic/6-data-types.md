@@ -96,7 +96,7 @@ print "Items:", names_and_ages.items()
 
 ## Examples
 
-* [Data-Types](examples/data-types.py)
+* [Data-Types](../examples/data-types.py)
 
 ## Summary
 
