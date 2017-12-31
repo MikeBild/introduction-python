@@ -57,3 +57,8 @@ names_and_ages = {
 }
 print "Dictionary:", names_and_ages, "Length:", len(names_and_ages)
 print "Index access:", names_and_ages['Mike']
+print "Values:", names_and_ages.values()
+print "Items:", names_and_ages.items()
+print "Find:", ('Mike', 38) in names_and_ages.items()
+for name, age in names_and_ages.items():
+  print "Loop:", name, age

@@ -2,25 +2,24 @@
 
 ## Basics in Python
 
-* [Introduction](1-introduction.md)
-* [Setup and Basics](2-setup-basics.md)
-* [Variables](3-variables.md)
-* [Conditional Statements](4-conditional.md)
-* [Functions](5-functions.md)
-* [Data Types - Lists, Tuples, Dictionaries](6-data-types.md)
-* [Loops](7-loops.md)
-* [Modules](8-modules.md)
-* [Classes](9-classes.md)
-* [Files](10-files.md)
-* [Exceptions](11-exceptions.md)
-* [Databases](12-database.md)
+* [Introduction](basic/1-introduction.md)
+* [Setup and Basics](basic/2-setup-basics.md)
+* [Variables](basic/3-variables.md)
+* [Conditional Statements](basic/4-conditional.md)
+* [Functions](basic/5-functions.md)
+* [Data Types - Lists, Tuples, Dictionaries](basic/6-data-types.md)
+* [Modules](basic/7-modules.md)
+* [Classes](basic/8-classes.md)
+* [Files](basic/9-files.md)
+* [Exceptions](basic/10-exceptions.md)
 
 ## Advanced Development
 
-* [More Data Types](13-advanced-data-types.md)
-* [Functional Python](14-functional-python.md)
-* [Magic Methods](15-advanced-magic-methods.md)
-* [Iterables, iterators and generators](16-advanced-iter.md)
+* [More Data Types](advanced/1-data-types.md)
+* [Databases](advanced/2-database.md)
+* [Functional Python](advanced/3-functional-python.md)
+* [Magic Methods](advanced/4-magic-methods.md)
+* [Iterables, iterators and generators](advanced/5-iter.md)
 
 ## Web-Development
 
