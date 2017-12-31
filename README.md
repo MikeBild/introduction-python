@@ -18,7 +18,7 @@
 ## Advanced Development
 
 * [More Data Types](13-advanced-data-types.md)
-* [Advanced Functions](14-advanced-functions.md)
+* [Functional Python](14-functional-python.md)
 * [Magic Methods](15-advanced-magic-methods.md)
 * [Iterables, iterators and generators](16-advanced-iter.md)
 
