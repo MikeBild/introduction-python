@@ -13,6 +13,16 @@ shuffle(numbers)
 print("List shuffle:", numbers)
 ```
 
+## Overview of the standard library
+
+* [random](https://docs.python.org/3/library/random.html)
+* [sys](https://docs.python.org/3/library/sys.html)
+* [math](https://docs.python.org/3/library/math.html)
+* [time](https://docs.python.org/3/library/time.html)
+* [os](https://docs.python.org/3/library/os.html)
+* [functools](https://docs.python.org/3/library/functools.html)
+* [itertools](https://docs.python.org/3/library/itertools.html)
+
 ## Exmaples
 
 * [Modules](../examples/modules.py)
