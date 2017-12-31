@@ -18,8 +18,9 @@
 * [More Data Types](advanced/1-data-types.md)
 * [Databases](advanced/2-database.md)
 * [Functional Python](advanced/3-functional-python.md)
-* [Magic Methods](advanced/4-magic-methods.md)
-* [Iterables, iterators and generators](advanced/5-iter.md)
+* [Decorators](advanced/4-decorators.md)
+* [Magic Methods](advanced/5-magic-methods.md)
+* [Iterables, iterators and generators](advanced/6-iter.md)
 
 ## Web-Development
 
