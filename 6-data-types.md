@@ -3,20 +3,35 @@
 ## Lists
 
 ```python
+# Creation
+L = [] # Empty
+L = list() # Empty
+L = list(sequence) # From sequence
+L = list(expression for variable in sequence) # Comprehensions
+
 names = ['John', 'Mike', 'Max']
 print names, len(names)
-```
 
-```python
+# Accessing
 names += ['Peter'] # create a new list with me in it
 names * 2 # repeating
 # seq = L[start:stop:step]
 names[:2] # first two names
 names[1:3] # slice
 names[::2] # every second
-
 # item = L[index]
 names[0] # index - the first name
+
+# Loops
+for name in names:
+  print "Loop:", name
+
+for index, item in enumerate(names):
+  print "Enumerate", index, item
+
+names_iterator = iter(names)
+print "Iterator:", names_iterator.next()
+print "Iterator:", names_iterator.next()
 
 # Join
 print "Join:", "|".join(names)
@@ -33,6 +48,24 @@ print "Sorted (custom):", sorted(names, key=lambda x: len(x))
 print "Map:", map(lambda x: x + x, names)
 print "Filter:", filter(lambda x: len(x) > 3, names)
 print "Reduce:", reduce(lambda x,y: x + '|' + y, names)
+
+# Comprehensions
+print "Comprehensions:", [len(x) for x in names]
+print "Comprehensions (conditional):", [x+x for x in names if len(x) > 3]
+print "Comprehensions (nested):", [(x,y) for x in names for y in [1, 2, 3]]
+
+# Modifying
+names.append('Klaus')
+print "Append:", names
+names.reverse()
+print "Reverse:", names
+names.extend(['Charli'])
+print "Extend:", names
+names.insert(3, 'Kate')
+print "Insert:", names
+names.remove('Kate')
+print "Remove:", names
+print "Pop:", names.pop(), names
 ```
 
 [More on Lists](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
