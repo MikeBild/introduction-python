@@ -33,3 +33,9 @@ def get_password():
 (password, verify) = get_password()
 print "Your password:", password
 print "Your verify: ", verify
+
+# lambda function
+add = lambda x,y: x + y
+add5 = lambda y: add(5, y)
+print "Lambda add:", add(5, 5)
+print "Lambda add5:", add5(10)

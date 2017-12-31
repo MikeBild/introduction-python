@@ -54,6 +54,19 @@ print "Your password:", password
 print "Your verify: ", verify
 ```
 
+## Lambda functions
+
+```python
+add = lambda x,y: x + y # lamdba function
+add5 = lambda y: add(5, y) # partial application function
+print "Lambda add:", add(5, 5)
+print "Lambda add5:", add5(10)
+```
+
+## Examples
+
+* [Functions](examples/functions.py)
+
 ## Summary
 
 * Functions are a way to write code once, and then use that same code in multiple places.
