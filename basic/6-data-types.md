@@ -80,6 +80,27 @@ thing += 4,
 print "Tuple:", thing
 ```
 
+## Sets
+
+Like lists, but without dublicates and we don't care about the order.
+
+```python
+# Basic set
+helloworld = {'Hello', 'World'}
+print("Set basic:", [x for x in helloworld])
+
+# Create a set from sequence
+hello = set('hello')
+print("Set from sequence:", [x for x in hello])
+
+# Modify set
+
+helloworld.add('Python')
+print("Set add:", [x for x in helloworld])
+helloworld.remove('Python')
+print("Set remove:", [x for x in helloworld])
+```
+
 ## Dictionaries
 
 ```python

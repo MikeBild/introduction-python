@@ -15,7 +15,7 @@
 
 ## Advanced Development
 
-* [More Data Types](advanced/1-data-types.md)
+* [Collection](advanced/1-collection.md)
 * [Databases](advanced/2-database.md)
 * [Functional Python](advanced/3-functional-python.md)
 * [Decorators](advanced/4-decorators.md)

@@ -41,7 +41,7 @@ def get_username():
 get_username()
 ```
 
-## Return values via construction / destruction
+## Return multiple values via tuple unpack
 
 ```python
 def get_password():
