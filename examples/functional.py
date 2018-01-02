@@ -1,25 +1,18 @@
-# Functional Python - FuncTools
-
-**Functions are objects**
-
-```python
+print(''.join(['-' for x in range(70)]))
+# Functions are objects
 def my_func(x):
   print("Functions are objects:", x, my_func.foo)
 my_func.foo = 'foo'
 print(dir(my_func))
-```
 
-**Use `lambda` to create named and anonymous functions.**
-
-```python
+print(''.join(['-' for x in range(70)]))
+# Named and anonymous functions
 my_lambda = lambda x: print("Lambda:", x, my_lambda.bar)
 my_lambda.bar = 'bar'
 my_lambda(42)
-```
 
-## Functions inside functions
-
-```python
+print(''.join(['-' for x in range(70)]))
+# Functions inside functions
 def f():
   def g():
     print("Hi, it's me 'g'")
@@ -30,13 +23,9 @@ def f():
   g()
 
 f()
-```
 
-## Higher Order Functions
-
-### Function as parameter
-
-```python
+print(''.join(['-' for x in range(70)]))
+# Function as parameter
 def g():
   print("Hi, it's me 'g'")
   print("Thanks for calling me")
@@ -47,11 +36,9 @@ def f(func):
   func()
 
 f(g)
-```
 
-### Returning a function
-
-```python
+print(''.join(['-' for x in range(70)]))
+# Returning a function
 def f(x):
   def g(y):
     return y + x + 3
@@ -61,8 +48,3 @@ nf1 = f(1)
 
 print(nf1(1))
 print(f(3)(1))
-```
-
-## Examples
-
-* [Functional Python](../examples/functional.py)
