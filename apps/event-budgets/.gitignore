@@ -1,6 +1,5 @@
+.DS_Store
 __pycache__
-.cache
 .ipynb_checkpoints
-*.txt
-*.pdf
+.env
 *.png

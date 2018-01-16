@@ -1,0 +1,17 @@
+# Python introduction
+
+* [Introduction](python/1-introduction.md)
+* [Setup and Basics](python/2-setup-basics.md)
+* [Variables](python/3-variables.md)
+* [Conditional Statements](python/4-conditional.md)
+* [Functions](python/5-functions.md)
+* [Data Types - Lists, Tuples, Dictionaries](python/6-data-types.md)
+* [Modules](python/7-modules.md)
+* [Classes](python/8-classes.md)
+* [Exceptions](python/9-exceptions.md)
+* [Testing](python/10-testing.md)
+* [Collection](python/11-collection.md)
+* [Functional Python](python/12-functional-python.md)
+* [Decorators](python/13-decorators.md)
+* [Magic Methods](python/14-magic-methods.md)
+* [Iterables, iterators and generators](python/15-iter.md)
