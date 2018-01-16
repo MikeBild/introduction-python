@@ -1,6 +1,6 @@
 # Introduction to Python
 
-> A modular Pythpn course for beginners and experienced developers.
+> A practical Python course for beginners and experienced developers.
 
 Structure:
 
