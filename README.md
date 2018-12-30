@@ -88,6 +88,6 @@ This project is licensed under the MIT license. See the [LICENSE](LICENSE) file 
 
 ## Thanks
 
-You like this Python introduction and you want to see what coming next? Follow me on Twitter [`@mikebild`](https://twitter.com/mikebild).
+You like this **Python introduction** and you want to see what coming next? Follow me on Twitter [`@mikebild`](https://twitter.com/mikebild).
 
 Enjoy!
