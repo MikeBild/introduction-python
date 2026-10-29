@@ -6,7 +6,7 @@
 
 ## Schritte
 
-1. Lies `shop.py` und die Fixtures in `conftest.py`. Der Code ist fertig, du schreibst nur Tests.
+1. Lies `shop.py` und die Fixtures in `conftest.py`. Der Code ist fertig, du schreibst nur Tests. Geld rechnet er in ganzen Cent als `int`, erst `format_cents` macht daraus „1.234,56 €“.
 2. Ergänze in `test_shop.py` die Prüfungen für Summe, ID und Zeitpunkt.
 3. Schreib einen Test mit `@pytest.mark.parametrize` für drei Fehlerfälle und `pytest.raises`.
 4. Prüf den Beleg mit `tmp_path` vollständig.

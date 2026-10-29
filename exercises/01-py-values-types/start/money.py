@@ -10,8 +10,9 @@ def to_cents(euros: str) -> int:
 
 
 def format_cents(cents: int) -> str:
-    """Formatiert 1234 als "12,34 €"."""
+    """Formatiert 1234 als "12,34 €" und 123456 als "1.234,56 €"."""
     # TODO: divmod(abs(cents), 100) und ein f-String mit {rest:02d}
+    # Tipp: f"{123456:_}" ergibt "123_456" – daraus wird der Tausenderpunkt.
     raise NotImplementedError
 
 

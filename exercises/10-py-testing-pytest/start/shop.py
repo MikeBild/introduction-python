@@ -57,10 +57,17 @@ def place_order(
     return PlacedOrder(next_id(), customer_id, tuple(items.items()), total, now())
 
 
+def format_cents(cents: int) -> str:
+    """Geld bleibt bis zur Ausgabe in ganzen Cent: 123456 → "1.234,56 €"."""
+    sign = "-" if cents < 0 else ""
+    euros, rest = divmod(abs(cents), 100)
+    return f"{sign}{euros:_}".replace("_", ".") + f",{rest:02d} €"
+
+
 def write_receipt(order: PlacedOrder, directory: Path) -> Path:
     path = directory / f"receipt-{order.id}.txt"
     lines = [f"Bestellung {order.id} vom {order.created_at:%d.%m.%Y}"]
     lines += [f"{quantity} × {product_id}" for product_id, quantity in order.items]
-    lines.append(f"Summe: {order.total_cents / 100:.2f} €".replace(".", ","))
+    lines.append(f"Summe: {format_cents(order.total_cents)}")
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return path

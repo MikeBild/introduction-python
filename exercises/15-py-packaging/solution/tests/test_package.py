@@ -13,6 +13,7 @@ PROJECT = Path(__file__).resolve().parents[1]
 
 def test_api_round_trip() -> None:
     assert format_cents(to_cents("12,34")) == "12,34 €"
+    assert format_cents(to_cents("1234,56")) == "1.234,56 €"
 
 
 def test_main_prints_cents(capsys: pytest.CaptureFixture[str]) -> None:

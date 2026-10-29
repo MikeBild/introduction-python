@@ -27,6 +27,13 @@ def test_format_cents_formats_euros() -> None:
     assert format_cents(1234) == "12,34 €"
     assert format_cents(5) == "0,05 €"
     assert format_cents(-250) == "-2,50 €"
+    assert format_cents(0) == "0,00 €"
+
+
+def test_format_cents_separates_thousands() -> None:
+    assert format_cents(123456) == "1.234,56 €"
+    assert format_cents(123456789) == "1.234.567,89 €"
+    assert format_cents(-100000) == "-1.000,00 €"
 
 
 def test_is_free_distinguishes_zero_and_none() -> None:
