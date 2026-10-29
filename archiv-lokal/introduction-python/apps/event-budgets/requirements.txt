@@ -1,0 +1,5 @@
+dropbox==8.5.1
+pandas==0.22.0
+matplotlib==2.1.1
+Flask==0.12.2
+schedule
