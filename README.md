@@ -71,7 +71,7 @@ Vom Hauptverzeichnis aus:
 | 08 | Dateien mit pathlib und with sicher lesen und schreiben | [08-py-files-json](exercises/08-py-files-json) |
 | 09 | Typ-Hinweise prüft mypy, nicht Python | [09-py-type-hints](exercises/09-py-type-hints) |
 | 10 | Mit pytest Verhalten prüfen statt Details | [10-py-testing-pytest](exercises/10-py-testing-pytest) |
-| 11 | Eine HTTP API mit Flask für den Werkstatt-Shop | [11-py-http-api-flask](exercises/11-py-http-api-flask) |
+| 11 | Eine HTTP-API mit Flask für den Werkstatt-Shop | [11-py-http-api-flask](exercises/11-py-http-api-flask) |
 
 ### Zusatzkapitel
 

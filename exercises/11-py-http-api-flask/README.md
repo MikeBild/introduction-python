@@ -1,4 +1,4 @@
-# Eine HTTP API mit Flask für den Werkstatt-Shop
+# Eine HTTP-API mit Flask für den Werkstatt-Shop
 
 **Lernziel:** Danach baust du mit Flask 3 eine HTTP-API mit App Factory, geprüftem JSON-Body, Error-Handlern und Tests per Test Client.
 
