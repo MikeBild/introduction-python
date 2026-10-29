@@ -1,6 +1,7 @@
-__pycache__
-.cache
-.ipynb_checkpoints
-*.txt
-*.pdf
-*.png
+__pycache__/
+.venv/
+.mypy_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+dist/
+*.egg-info/
