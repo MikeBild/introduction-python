@@ -1,7 +1,7 @@
 """Prüft alle Übungen: pytest und mypy --strict je Startpunkt und Lösung.
 
 uv run python scripts/check.py            alle Übungen
-uv run python scripts/check.py 05 11      nur Lektion 05 und 11
+uv run python scripts/check.py 05 11      nur die Übungen 05 und 11
 uv run python scripts/check.py --solution nur die Lösungen
 
 Jede Übung läuft in ihrem eigenen Verzeichnis, damit gleichnamige Module
@@ -48,7 +48,7 @@ def main(args: list[str]) -> int:
             if not check(exercise / kind):
                 failed.append(f"{exercise.name}/{kind}")
     if failed:
-        print("\nFehlgeschlagen:", *failed, sep="\n  ")
+        print("\nFehlgeschlagen – die Ursache steht in der Ausgabe darüber:", *failed, sep="\n  ")
         return 1
     print("\nAlle Übungen geprüft.")
     return 0
