@@ -22,4 +22,4 @@ uv run pytest
 uv run mypy --strict src tests
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Root aus prüft `uv run python scripts/check.py 05` Start und Lösung dieser Übung.
+Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 05` Startpunkt und Lösung dieser Übung.

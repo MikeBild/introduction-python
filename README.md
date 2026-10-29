@@ -1,38 +1,28 @@
-# Übungen: Python für Entwickler
+# Übungen: Python
 
-Übungs-Repo zum Workshop **„Python für Entwickler mit uv, pytest und Flask“** ([workshops.mikebild.dev](https://workshops.mikebild.dev)) und zum Foliensatz [slides.mikebild.dev/introduction-python.html](https://slides.mikebild.dev/introduction-python.html). Zu jeder der 17 Lektionen findest du hier eine Aufgabe mit Startpunkt, Lösung und Tests. Alle Übungen drehen sich um dieselbe Domäne, den [Werkstatt-Shop](docs/beispiel-domaene.md): Produkte, Bestellungen mit Positionen aus `productId`, `quantity` und `priceCents`, Geld immer in ganzen Cent.
+Übungs-Repo zum Workshop „Python für Entwickler mit uv, pytest und Flask“. Zu jeder der 17 Lektionen gibt es eine Übung mit Startpunkt, Tests und Lösung. Alle Übungen spielen im Werkstatt-Shop mit Produkten und Bestellungen.
 
-**Stack (Oktober 2026):** Python 3.15 · uv als einziges Tool für Python-Versionen, Umgebungen und Pakete · pytest · Typ-Hinweise mit mypy `--strict` · Flask 3 · pandas 3 und JupyterLab für die Datenanalyse
+## Was du lernst
 
-Bewusst wenige Pakete:
+- Werte, Funktionen, Collections und Dataclasses mit Typ-Hinweisen nutzen
+- Fehler gezielt behandeln, Dateien lesen und mit pytest und mypy prüfen
+- Projekte mit uv anlegen und mit Flask 3 eine HTTP API bauen
 
-| Paket | Wofür | Warum dieses |
-| --- | --- | --- |
-| `flask` | HTTP API | Routing, JSON und Test Client in einem Paket; FastAPI bräuchte zusätzlich Starlette, Pydantic, einen ASGI-Server und httpx für Tests |
-| `pytest` | Tests | Tests als einfache Funktionen mit `assert`, Fixtures und `parametrize` |
-| `mypy` | Typprüfung | läuft als Python-Paket direkt mit uv, ohne zusätzliche Laufzeit |
-| `pandas`, `pandas-stubs`, `jupyterlab` | Zusatzkapitel Datenanalyse | Gruppe `data`, nur für die Übungen 12 und 13 |
+## Voraussetzungen
 
-Für asyncio, Dateien, JSON, CSV, Generatoren und Decorators reicht die Standardbibliothek.
+- **uv** – verwaltet Python-Versionen, Umgebungen und Pakete ([Installation](https://docs.astral.sh/uv/getting-started/installation/)). Prüfen mit `uv --version`.
+- **Python 3.15** – `uv sync` liest die Version aus [`.python-version`](.python-version) und installiert sie bei Bedarf.
 
-## Vorbereitung
+## Einrichten
 
-1. **uv** installieren ([Anleitung](https://docs.astral.sh/uv/getting-started/installation/)) und prüfen:
+```bash
+git clone https://github.com/MikeBild/introduction-python.git
+cd introduction-python
+uv sync                          # installiert Python 3.15 aus .python-version, falls nötig
+uv run python scripts/check.py   # pytest und mypy --strict für alle Übungen
+```
 
-   ```bash
-   uv --version
-   ```
-
-2. Repo klonen, Umgebung anlegen, alles prüfen:
-
-   ```bash
-   git clone https://github.com/MikeBild/introduction-python.git
-   cd introduction-python
-   uv sync                          # installiert Python 3.15 aus .python-version, falls nötig
-   uv run python scripts/check.py   # pytest und mypy --strict für alle Übungen
-   ```
-
-## Aufbau
+## So arbeitest du mit einer Übung
 
 ```text
 exercises/
@@ -44,13 +34,12 @@ exercises/
     solution/          eine mögliche Lösung, gleiche Struktur
 data/                  Beispieldaten: products.json, orders.json, orders.jsonl
 docs/                  die Domäne des Werkstatt-Shops
-scripts/check.py       prüft Start und Lösung aller Übungen
-legacy/                das Material von 2018, nur zum Nachschlagen
+scripts/check.py       prüft Startpunkt und Lösung aller Übungen
 ```
 
-Alle Lektionen teilen sich eine `pyproject.toml` und eine `.venv` im Root. Ausnahmen sind 05 und 15: Dort lernst du, ein eigenes Paket anzulegen, deshalb hat die Übung ihr eigenes uv-Projekt.
-
-## So arbeitest du an einer Lektion
+1. Lies das `README.md` der Übung und öffne den Startpunkt in `start/`.
+2. Entferne in der Testdatei die Zeile `pytestmark = pytest.mark.skip(...)` und bearbeite die TODOs, bis pytest und mypy grün sind.
+3. Vergleiche danach mit `solution/`.
 
 ```bash
 cd exercises/04-py-comprehensions/start
@@ -58,15 +47,17 @@ uv run pytest            # Tests dieser Übung
 uv run mypy --strict .   # Typprüfung
 ```
 
-Vom Root aus:
+Alle Übungen teilen sich eine `pyproject.toml` und eine `.venv` im Hauptverzeichnis. Ausnahmen sind 05 und 15: Dort lernst du, ein eigenes Paket anzulegen, deshalb hat die Übung ihr eigenes uv-Projekt.
+
+Vom Hauptverzeichnis aus:
 
 | Befehl | Was es tut |
 | --- | --- |
-| `uv run python scripts/check.py` | pytest und mypy für alle Starts und Lösungen |
+| `uv run python scripts/check.py` | pytest und mypy für alle Startpunkte und Lösungen |
 | `uv run python scripts/check.py 04 11` | nur die Übungen 04 und 11 |
 | `uv run python scripts/check.py --solution` | nur die Lösungen |
 
-## Lektionen
+## Übungen
 
 | Nr. | Lektion | Übung |
 | --- | --- | --- |
@@ -82,7 +73,7 @@ Vom Root aus:
 | 10 | Mit pytest Verhalten prüfen statt Details | [10-py-testing-pytest](exercises/10-py-testing-pytest) |
 | 11 | Eine HTTP API mit Flask für den Werkstatt-Shop | [11-py-http-api-flask](exercises/11-py-http-api-flask) |
 
-**Zusatzkapitel**
+### Zusatzkapitel
 
 | Nr. | Lektion | Übung |
 | --- | --- | --- |
@@ -93,6 +84,30 @@ Vom Root aus:
 | 16 | Generatoren liefern Werte erst auf Nachfrage | [16-py-generators](exercises/16-py-generators) |
 | 17 | Decorators fügen Verhalten hinzu, ohne Code zu ändern | [17-py-decorators](exercises/17-py-decorators) |
 
-## Legacy
+## Der Werkstatt-Shop
 
-Das Material von 2018 (Python 3.6, Flask, NumPy, Matplotlib, pandas) liegt unverändert in [`legacy/`](legacy/). Es wird nicht mehr gepflegt.
+Eine Bestellung besteht aus Positionen mit `productId`, `quantity` und `priceCents`. Geld steht immer in ganzen Cent. Die ganze Domäne beschreibt [`docs/beispiel-domaene.md`](docs/beispiel-domaene.md).
+
+## Stack und Pakete
+
+**Stack (Oktober 2026):** Python 3.15 · uv als einziges Tool für Python-Versionen, Umgebungen und Pakete · pytest · Typ-Hinweise mit mypy `--strict` · Flask 3 · pandas 3 und JupyterLab für die Datenanalyse
+
+Bewusst wenige Pakete:
+
+| Paket | Wofür | Warum dieses |
+| --- | --- | --- |
+| `flask` | HTTP API | Routing, JSON und Test Client in einem Paket; FastAPI bräuchte zusätzlich Starlette, Pydantic, einen ASGI-Server und httpx für Tests |
+| `pytest` | Tests | Tests als einfache Funktionen mit `assert`, Fixtures und `parametrize` |
+| `mypy` | Typprüfung | läuft als Python-Paket direkt mit uv, ohne zusätzliche Laufzeit |
+| `pandas`, `pandas-stubs`, `jupyterlab` | Zusatzkapitel Datenanalyse | Gruppe `data`, nur für die Übungen 12 und 13 |
+
+Für asyncio, Dateien, JSON, CSV, Generatoren und Decorators reicht die Standardbibliothek.
+
+## Workshop und Folien
+
+- Workshop: [„Python für Entwickler mit uv, pytest und Flask“](https://workshops.mikebild.dev/w/python/remote/)
+- Folien: [slides.mikebild.dev/introduction-python](https://slides.mikebild.dev/introduction-python.html)
+
+## Archiv
+
+Das Material von 2018 (Python 3.6, Flask, NumPy, Matplotlib, pandas) liegt unverändert in [`legacy/`](legacy/) und wird nicht mehr gepflegt.
