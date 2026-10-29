@@ -39,4 +39,4 @@ export type PlaceOrderInput = z.infer<typeof PlaceOrderInput>
 - **Reactive:** Suche/Filter der Produkte als Stream, Live-Status der Bestellung.
 - **Architektur:** Order als Aggregat (Konsistenzgrenze), Events OrderPlaced/OrderPaid, Projektion „offene Bestellungen“, ADR „Warum Event Sourcing nur für Orders“.
 - **Knockout:** Warenkorb-ViewModel mit observables/computed (Gesamtsumme).
-- **Python:** Geld in Cent als `int`, Positionen und Bestellung als Dataclasses mit `StrEnum`-Status, IDs als `NewType`, JSON-Felder als `TypedDict` in camelCase, Fehlerhierarchie `OrderError`, HTTP API mit Flask 3, Auswertung der Bestellungen mit pandas.
+- **Python:** Geld in Cent als `int`, Positionen und Bestellung als Dataclasses mit `StrEnum`-Status, IDs als `NewType`, JSON-Felder als `TypedDict` in camelCase, Fehlerhierarchie `OrderError`, HTTP-API mit Flask 3, Auswertung der Bestellungen mit pandas.

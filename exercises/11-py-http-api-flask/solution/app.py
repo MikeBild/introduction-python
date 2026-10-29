@@ -1,4 +1,4 @@
-"""HTTP API mit Flask 3. Start: uv run flask --app app run --debug"""
+"""HTTP-API mit Flask 3. Start: uv run flask --app app run --debug"""
 
 from flask import Flask, request
 from flask.typing import ResponseReturnValue

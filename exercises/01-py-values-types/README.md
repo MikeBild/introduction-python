@@ -8,7 +8,7 @@
 
 1. Öffne `start/money.py`.
 2. Schreib `to_cents`: Leerzeichen entfernen, Komma durch Punkt ersetzen, mit `partition` in Euro und Cent teilen. Ungültige Eingaben lösen `ValueError` aus.
-3. Schreib `format_cents` mit `divmod` und einem f-String.
+3. Schreib `format_cents` mit `divmod` und einem f-String. Die Ausgabe folgt DIN 5008: 123456 Cent ergeben „1.234,56 €“.
 4. Schreib `is_free` so, dass `0` gratis ist und `None` nicht.
 
 Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.

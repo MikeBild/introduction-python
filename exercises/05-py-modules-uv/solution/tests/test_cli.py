@@ -9,6 +9,7 @@ from werkstatt.cli import main
 
 def test_package_exports_its_public_functions() -> None:
     assert werkstatt.format_cents(5097) == "50,97 €"
+    assert werkstatt.format_cents(123456) == "1.234,56 €"
     assert werkstatt.order_total([werkstatt.parse_item("2x1299")]) == 2598
 
 

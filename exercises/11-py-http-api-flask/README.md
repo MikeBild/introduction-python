@@ -1,6 +1,6 @@
 # Eine HTTP API mit Flask für den Werkstatt-Shop
 
-**Lernziel:** Danach baust du mit Flask 3 eine HTTP API mit App Factory, geprüftem JSON-Body, Error Handlern und Tests per Test Client.
+**Lernziel:** Danach baust du mit Flask 3 eine HTTP-API mit App Factory, geprüftem JSON-Body, Error-Handlern und Tests per Test Client.
 
 **Aufgabe:** Ergänze GET /orders/<order_id> und POST /orders mit 201 und Location, übersetz Fehler per Error Handler in 400, 409 und 422 und lass die Tests grün werden.
 

@@ -6,7 +6,7 @@
 
 - Werte, Funktionen, Collections und Dataclasses mit Typ-Hinweisen nutzen
 - Fehler gezielt behandeln, Dateien lesen und mit pytest und mypy prüfen
-- Projekte mit uv anlegen und mit Flask 3 eine HTTP API bauen
+- Projekte mit uv anlegen und mit Flask 3 eine HTTP-API bauen
 
 ## Voraussetzungen
 
@@ -96,7 +96,7 @@ Bewusst wenige Pakete:
 
 | Paket | Wofür | Warum dieses |
 | --- | --- | --- |
-| `flask` | HTTP API | Routing, JSON und Test Client in einem Paket; FastAPI bräuchte zusätzlich Starlette, Pydantic, einen ASGI-Server und httpx für Tests |
+| `flask` | HTTP-API | Routing, JSON und Test Client in einem Paket; FastAPI bräuchte zusätzlich Starlette, Pydantic, einen ASGI-Server und httpx für Tests |
 | `pytest` | Tests | Tests als einfache Funktionen mit `assert`, Fixtures und `parametrize` |
 | `mypy` | Typprüfung | läuft als Python-Paket direkt mit uv, ohne zusätzliche Laufzeit |
 | `pandas`, `pandas-stubs`, `jupyterlab` | Zusatzkapitel Datenanalyse | Gruppe `data`, nur für die Übungen 12 und 13 |
@@ -111,3 +111,7 @@ Für asyncio, Dateien, JSON, CSV, Generatoren und Decorators reicht die Standard
 ## Archiv
 
 Das Material von 2018 (Python 3.6, Flask, NumPy, Matplotlib, pandas) liegt unverändert in [`legacy/`](legacy/) und wird nicht mehr gepflegt.
+
+## Lizenz
+
+[MIT](LICENSE)

@@ -4,7 +4,14 @@ from pathlib import Path
 
 import pytest
 
-from shop import InsufficientStock, OrderError, PlacedOrder, UnknownProduct, write_receipt
+from shop import (
+    InsufficientStock,
+    OrderError,
+    PlacedOrder,
+    UnknownProduct,
+    format_cents,
+    write_receipt,
+)
 
 type Place = Callable[[dict[str, int]], PlacedOrder]
 FIXED_NOW = datetime(2026, 10, 1, 9, 30, tzinfo=UTC)
@@ -43,3 +50,11 @@ def test_write_receipt_creates_a_readable_file(place: Place, tmp_path: Path) -> 
     assert path.read_text(encoding="utf-8") == (
         "Bestellung o-1 vom 01.10.2026\n2 × p-hammer\nSumme: 25,98 €\n"
     )
+
+
+@pytest.mark.parametrize(
+    ("cents", "text"),
+    [(0, "0,00 €"), (2598, "25,98 €"), (123456, "1.234,56 €"), (-250, "-2,50 €")],
+)
+def test_format_cents_uses_whole_cents(cents: int, text: str) -> None:
+    assert format_cents(cents) == text
