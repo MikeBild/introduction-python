@@ -1,0 +1,18 @@
+[project]
+name = "werkstatt"
+version = "0.1.0"
+description = "Werkstatt-Shop: Summen von Bestellungen auf der Kommandozeile"
+requires-python = ">=3.15"
+dependencies = []
+
+# TODO: Trag den Befehl werkstatt ein, der werkstatt.cli:main aufruft ([project.scripts]).
+
+[dependency-groups]
+dev = ["pytest>=9.2", "mypy>=2.4.1"]
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14"]
+build-backend = "uv_build"
+
+[tool.mypy]
+strict = true

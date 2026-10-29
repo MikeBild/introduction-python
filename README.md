@@ -1,93 +1,98 @@
-# Introduction to Python
+# Übungen: Python für Entwickler
 
-> A practical Python course for beginners and experienced developers.
+Übungs-Repo zum Workshop **„Python für Entwickler mit uv, pytest und Flask“** ([workshops.mikebild.dev](https://workshops.mikebild.dev)) und zum Foliensatz [slides.mikebild.dev/introduction-python.html](https://slides.mikebild.dev/introduction-python.html). Zu jeder der 17 Lektionen findest du hier eine Aufgabe mit Startpunkt, Lösung und Tests. Alle Übungen drehen sich um dieselbe Domäne, den [Werkstatt-Shop](docs/beispiel-domaene.md): Produkte, Bestellungen mit Positionen aus `productId`, `quantity` und `priceCents`, Geld immer in ganzen Cent.
 
-Structure:
+**Stack (Oktober 2026):** Python 3.15 · uv als einziges Tool für Python-Versionen, Umgebungen und Pakete · pytest · Typ-Hinweise mit mypy `--strict` · Flask 3 · pandas 3 und JupyterLab für die Datenanalyse
 
-* Basic programming concepts and eco system
-* Advanced development techniques
-* Web-Development
-* Data-Analysis and Visualization
+Bewusst wenige Pakete:
 
-## Introduction
+| Paket | Wofür | Warum dieses |
+| --- | --- | --- |
+| `flask` | HTTP API | Routing, JSON und Test Client in einem Paket; FastAPI bräuchte zusätzlich Starlette, Pydantic, einen ASGI-Server und httpx für Tests |
+| `pytest` | Tests | Tests als einfache Funktionen mit `assert`, Fixtures und `parametrize` |
+| `mypy` | Typprüfung | läuft als Python-Paket direkt mit uv, ohne zusätzliche Laufzeit |
+| `pandas`, `pandas-stubs`, `jupyterlab` | Zusatzkapitel Datenanalyse | Gruppe `data`, nur für die Übungen 12 und 13 |
 
-### Why Python?
+Für asyncio, Dateien, JSON, CSV, Generatoren und Decorators reicht die Standardbibliothek.
 
-* Very easy to learn
-* Open-Source with an awesome community
-* Productive tools and a lot of exisiting libraries
+## Vorbereitung
 
-### Why Python instead of R, SPSS, PASW, etc.?
+1. **uv** installieren ([Anleitung](https://docs.astral.sh/uv/getting-started/installation/)) und prüfen:
 
-* Who want's to learn a development tool to build Command-Line, Web, Data-Analytics, and Scientific Applications
-* Can become a common language for data science and production of web based analytics products
+   ```bash
+   uv --version
+   ```
 
-### Slides
+2. Repo klonen, Umgebung anlegen, alles prüfen:
 
-* [Python + Pandas in a Nutshell](https://speakerdeck.com/mikebild/python-and-pandas-in-a-nutshell)
-* [Introduction Python Data-Apps](https://speakerdeck.com/mikebild/introduction-data-apps-with-python)
+   ```bash
+   git clone https://github.com/MikeBild/introduction-python.git
+   cd introduction-python
+   uv sync                          # installiert Python 3.15 aus .python-version, falls nötig
+   uv run python scripts/check.py   # pytest und mypy --strict für alle Übungen
+   ```
 
-## Basics in Python
+## Aufbau
 
-* [Introduction](python/1-introduction.md)
-* [Setup and Basics](python/2-setup-basics.md)
-* [Variables](python/3-variables.md)
-* [Conditional Statements](python/4-conditional.md)
-* [Functions](python/5-functions.md)
-* [Data Types - Lists, Tuples, Dictionaries](python/6-data-types.md)
-* [Modules](python/7-modules.md)
-* [Classes](python/8-classes.md)
-* [Exceptions](python/9-exceptions.md)
-* [Testing](python/10-testing.md)
+```text
+exercises/
+  01-py-values-types/
+    README.md          Aufgabe, Schritte, Prüfen
+    start/             dein Startpunkt mit TODO-Kommentaren
+      money.py
+      test_money.py    Tests mit pytestmark = skip – entferne die Zeile, um sie zu aktivieren
+    solution/          eine mögliche Lösung, gleiche Struktur
+data/                  Beispieldaten: products.json, orders.json, orders.jsonl
+docs/                  die Domäne des Werkstatt-Shops
+scripts/check.py       prüft Start und Lösung aller Übungen
+legacy/                das Material von 2018, nur zum Nachschlagen
+```
 
-## Advanced Development
+Alle Lektionen teilen sich eine `pyproject.toml` und eine `.venv` im Root. Ausnahmen sind 05 und 15: Dort lernst du, ein eigenes Paket anzulegen, deshalb hat die Übung ihr eigenes uv-Projekt.
 
-* [Collection](python/11-collection.md)
-* [Functional Python](python/12-functional-python.md)
-* [Decorators](python/13-decorators.md)
-* [Magic Methods](python/14-magic-methods.md)
-* [Iterables, iterators and generators](python/15-iter.md)
+## So arbeitest du an einer Lektion
 
-## Web-Development
+```bash
+cd exercises/04-py-comprehensions/start
+uv run pytest            # Tests dieser Übung
+uv run mypy --strict .   # Typprüfung
+```
 
-* [Basics](web/1-app.md)
-* [Server Side Rendering](web/2-ssr.md)
-* [JSON](web/3-json.md)
-* [Testing](web/4-testing.md)
+Vom Root aus:
 
-## Data-Access
+| Befehl | Was es tut |
+| --- | --- |
+| `uv run python scripts/check.py` | pytest und mypy für alle Starts und Lösungen |
+| `uv run python scripts/check.py 04 11` | nur die Übungen 04 und 11 |
+| `uv run python scripts/check.py --solution` | nur die Lösungen |
 
-* [Files](data-access/1-files.md)
-* [Databases](data-access/2-database.md)
-* [JSON](data-access/3-json.md)
-* [XML](data-access/4-xml.md)
-* [CSV](data-access/5-csv.md)
-* [Excel](data-access/6-excel.md)
+## Lektionen
 
-## Data-Analysis
+| Nr. | Lektion | Übung |
+| --- | --- | --- |
+| 01 | Namen zeigen auf Werte, Werte haben Typen | [01-py-values-types](exercises/01-py-values-types) |
+| 02 | Funktionen mit klarer Signatur statt Flag-Parametern | [02-py-functions](exercises/02-py-functions) |
+| 03 | Welche Collection passt zu deinen Daten? | [03-py-collections](exercises/03-py-collections) |
+| 04 | Comprehensions statt Schleifen mit append | [04-py-comprehensions](exercises/04-py-comprehensions) |
+| 05 | Ein Projekt mit uv statt pip und venv von Hand | [05-py-modules-uv](exercises/05-py-modules-uv) |
+| 06 | Dataclasses statt Klassen voller Boilerplate | [06-py-classes-dataclasses](exercises/06-py-classes-dataclasses) |
+| 07 | Welche Exception fängst du, welche nicht? | [07-py-errors](exercises/07-py-errors) |
+| 08 | Dateien mit pathlib und with sicher lesen und schreiben | [08-py-files-json](exercises/08-py-files-json) |
+| 09 | Typ-Hinweise prüft mypy, nicht Python | [09-py-type-hints](exercises/09-py-type-hints) |
+| 10 | Mit pytest Verhalten prüfen statt Details | [10-py-testing-pytest](exercises/10-py-testing-pytest) |
+| 11 | Eine HTTP API mit Flask für den Werkstatt-Shop | [11-py-http-api-flask](exercises/11-py-http-api-flask) |
 
-* [NumPy](data-analysis/1-numpy.md)
-* [SciPy](data-analysis/2-scipy.md)
-* [MatPlotLib](data-analysis/3-matplotlib.md)
-* [Pandas](data-analysis/4-pandas.md)
+**Zusatzkapitel**
 
-## More Python
+| Nr. | Lektion | Übung |
+| --- | --- | --- |
+| 12 | Bestellungen mit pandas auswerten statt mit Schleifen | [12-py-pandas-orders](exercises/12-py-pandas-orders) |
+| 13 | Im Notebook erkunden, im Modul festhalten | [13-py-jupyter](exercises/13-py-jupyter) |
+| 14 | Mit asyncio warten, ohne zu blockieren | [14-py-asyncio](exercises/14-py-asyncio) |
+| 15 | Ein Paket bauen, das andere installieren können | [15-py-packaging](exercises/15-py-packaging) |
+| 16 | Generatoren liefern Werte erst auf Nachfrage | [16-py-generators](exercises/16-py-generators) |
+| 17 | Decorators fügen Verhalten hinzu, ohne Code zu ändern | [17-py-decorators](exercises/17-py-decorators) |
 
-* [Web based Microservices with Python + Flask](https://github.com/umermansoor/microservices)
-* [Event-Driven Microservices with Python + RabbitMQ](https://github.com/rochacbruno/nameko-example)
-* [Function as a Service (FaaS) with Python](https://github.com/fnproject/fdk-python)
-* [DDD in Dynamic Languages](https://github.com/valentjedi/ddd-dynamic)
+## Legacy
 
-## Issue Reporting
-
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public [GitHub issue tracker](https://github.com/MikeBild/introduction-python/issues).
-
-## License
-
-This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.
-
-## Thanks
-
-You like this **Python introduction** and you want to see what coming next? Follow me on Twitter [`@mikebild`](https://twitter.com/mikebild).
-
-Enjoy!
+Das Material von 2018 (Python 3.6, Flask, NumPy, Matplotlib, pandas) liegt unverändert in [`legacy/`](legacy/). Es wird nicht mehr gepflegt.

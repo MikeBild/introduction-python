@@ -1,0 +1,23 @@
+[project]
+name = "werkstatt-money"
+version = "1.0.0"
+description = "Geldbeträge in ganzen Cent parsen und formatieren"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Werkstatt-Shop" }]
+requires-python = ">=3.15"
+dependencies = []
+classifiers = ["Programming Language :: Python :: 3.15", "Typing :: Typed"]
+
+[project.scripts]
+werkstatt-money = "werkstatt_money:main"
+
+[dependency-groups]
+dev = ["pytest>=9.2", "mypy>=2.4.1"]
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14"]
+build-backend = "uv_build"
+
+[tool.mypy]
+strict = true

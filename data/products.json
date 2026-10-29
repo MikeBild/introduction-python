@@ -1,0 +1,7 @@
+[
+  { "id": "p-hammer", "name": "Hammer", "priceCents": 1299, "stock": 12 },
+  { "id": "p-saege", "name": "Säge", "priceCents": 2499, "stock": 4 },
+  { "id": "p-bohrer", "name": "Akkubohrer", "priceCents": 8999, "stock": 2 },
+  { "id": "p-zange", "name": "Zange", "priceCents": 899, "stock": 20 },
+  { "id": "p-schrauben", "name": "Schrauben (100 Stück)", "priceCents": 499, "stock": 150 }
+]
