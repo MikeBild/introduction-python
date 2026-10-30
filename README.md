@@ -4,7 +4,7 @@
 
 ## Was du lernst
 
-- Werte, Funktionen, Collections und Dataclasses mit Typ-Hinweisen nutzen
+- Werte, Funktionen, Collections und Dataclasses mit Type Hints nutzen
 - Fehler gezielt behandeln, Dateien lesen und mit pytest und mypy prüfen
 - Projekte mit uv anlegen und mit Flask 3 eine HTTP-API bauen
 
@@ -69,7 +69,7 @@ Vom Hauptverzeichnis aus:
 | 06 | Dataclasses statt Klassen voller Boilerplate | [06-py-classes-dataclasses](exercises/06-py-classes-dataclasses) |
 | 07 | Welche Exception fängst du, welche nicht? | [07-py-errors](exercises/07-py-errors) |
 | 08 | Dateien mit pathlib und with sicher lesen und schreiben | [08-py-files-json](exercises/08-py-files-json) |
-| 09 | Typ-Hinweise prüft mypy, nicht Python | [09-py-type-hints](exercises/09-py-type-hints) |
+| 09 | Type Hints prüft mypy, nicht Python | [09-py-type-hints](exercises/09-py-type-hints) |
 | 10 | Mit pytest Behavior prüfen statt Details | [10-py-testing-pytest](exercises/10-py-testing-pytest) |
 | 11 | Eine HTTP-API mit Flask für den Werkstatt-Shop | [11-py-http-api-flask](exercises/11-py-http-api-flask) |
 
@@ -90,7 +90,7 @@ Eine Bestellung besteht aus Positionen mit `productId`, `quantity` und `priceCen
 
 ## Stack und Pakete
 
-**Stack (Oktober 2026):** Python 3.15 · uv als einziges Tool für Python-Versionen, Umgebungen und Pakete · pytest · Typ-Hinweise mit mypy `--strict` · Flask 3 · pandas 3 und JupyterLab für die Datenanalyse
+**Stack (Oktober 2026):** Python 3.15 · uv als einziges Tool für Python-Versionen, Umgebungen und Pakete · pytest · Type Hints mit mypy `--strict` · Flask 3 · pandas 3 und JupyterLab für die Datenanalyse
 
 Bewusst wenige Pakete:
 

@@ -1,4 +1,4 @@
-# Typ-Hinweise prüft mypy, nicht Python
+# Type Hints prüft mypy, nicht Python
 
 **Lernziel:** Danach annotierst du ein Modul mit NewType, Literal, TypedDict und X | None, sodass mypy --strict es ohne Fehler prüft.
 
