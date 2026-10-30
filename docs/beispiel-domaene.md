@@ -31,7 +31,7 @@ export type PlaceOrderInput = z.infer<typeof PlaceOrderInput>
 ```
 
 ## Zuordnung je Workshop
-- **JS/TS:** Werte, Funktionen, Arrays (Summe, Filter), Branded IDs, zod-Schema, reine Funktion `placeOrder`.
+- **JS/TS:** Werte, Funktionen, Arrays (Summe, Filter), Branded IDs, zod-Schema, Pure Function `placeOrder`.
 - **Node.js (Express 5):** REST-API `/products`, `/orders` (POST place, GET list), Validierung mit dem Schema, Fehler, Datenbank, Tests.
 - **GraphQL (Apollo):** Schema `Product`, `Order`, `Query.orders`, `Mutation.placeOrder`, DataLoader für Produkte, Pagination der Bestellungen.
 - **React:** Produktliste, Warenkorb (State/Reducer), Checkout-Formular mit demselben zod-Schema, Bestellübersicht (React Router).
