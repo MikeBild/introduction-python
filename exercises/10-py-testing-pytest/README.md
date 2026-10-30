@@ -1,4 +1,4 @@
-# Mit pytest Verhalten prüfen statt Details
+# Mit pytest Behavior prüfen statt Details
 
 **Lernziel:** Danach schreibst du pytest-Tests mit assert, Fixtures, parametrize, pytest.raises und tmp_path für Code mit fester Zeit.
 
