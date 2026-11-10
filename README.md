@@ -107,6 +107,7 @@ Für asyncio, Dateien, JSON, CSV, Generatoren und Decorators reicht die Standard
 
 - Workshop: [„Python für Entwickler mit uv, pytest und Flask“](https://workshops.mikebild.dev/w/python/remote/)
 - Folien: [slides.mikebild.dev/introduction-python](https://slides.mikebild.dev/introduction-python.html)
+- PDF: [slides.mikebild.dev/introduction-python.pdf](https://slides.mikebild.dev/introduction-python.pdf)
 - Beiträge auf mikebild.dev:
   - [Fortgeschrittenes Python: Decorators, Magic Methods und Generatoren](https://www.mikebild.dev/de/blog/python-advanced-decorators-generatoren/)
   - [Funktionale Muster in Python: Comprehensions, itertools und functools](https://www.mikebild.dev/de/blog/funktionale-muster-in-python/)
