@@ -1,20 +1,22 @@
-# Welche Collection passt zu deinen Daten?
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach wählst du für Produkte und Bestellungen list, tuple, dict, set oder Counter passend zum Zugriff.
+# Which collection fits your data?
 
-**Aufgabe:** Bau einen Index der Produkte per ID, finde knappe Produkte, sammle Kunden-IDs ohne Duplikate und zähl Mengen je Produkt mit Counter.
+**Learning goal:** After this, you choose list, tuple, dict, set, or Counter for products and orders based on access.
 
-## Schritte
+**Task:** Build an index of products by ID, find low-stock products, collect customer IDs without duplicates, and count quantities per product with Counter.
 
-1. Bau mit `index_by_id` ein dict von der Produkt-ID auf das Produkt.
-2. Liefere mit `low_stock` die Namen knapper Produkte alphabetisch sortiert.
-3. Sammle mit `customer_ids` jede Kunden-ID genau einmal.
-4. Zähl mit `quantities_by_product` und `Counter` die bestellten Mengen.
-5. Gib mit `price_list` ein `frozendict` zurück (eingebaut seit Python 3.15).
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Build a dict from product ID to product with `index_by_id`.
+2. Return the names of products low on stock in alphabetical order with `low_stock`.
+3. Collect every customer ID exactly once with `customer_ids`.
+4. Count the ordered quantities with `quantities_by_product` and `Counter`.
+5. Return a `frozendict` with `price_list` (built in since Python 3.15).
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -22,4 +24,4 @@ uv run pytest
 uv run mypy --strict .
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 03` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 03` checks the starting point and the solution of this exercise.

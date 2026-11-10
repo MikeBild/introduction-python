@@ -1,19 +1,21 @@
-# Namen zeigen auf Werte, Werte haben Typen
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach rechnest du Geldbeträge exakt in ganzen Cent und unterscheidest 0, None und leere Werte sicher.
+# Names point to values, values have types
 
-**Aufgabe:** Schreib to_cents, das „12,34“ exakt in 1234 Cent umrechnet, format_cents für die Ausgabe und is_free, das 0 und None unterscheidet.
+**Learning goal:** After this, you calculate money amounts exactly in whole cents and safely distinguish 0, None, and empty values.
 
-## Schritte
+**Task:** Write to_cents, which converts “12,34” exactly to 1234 cents, format_cents for output, and is_free, which distinguishes 0 and None.
 
-1. Öffne `start/money.py`.
-2. Schreib `to_cents`: Leerzeichen entfernen, Komma durch Punkt ersetzen, mit `partition` in Euro und Cent teilen. Ungültige Eingaben lösen `ValueError` aus.
-3. Schreib `format_cents` mit `divmod` und einem f-String. Die Ausgabe folgt DIN 5008: 123456 Cent ergeben „1.234,56 €“.
-4. Schreib `is_free` so, dass `0` gratis ist und `None` nicht.
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Open `start/money.py`.
+2. Write `to_cents`: strip whitespace, replace the comma with a dot, split into euros and cents with `partition`. Invalid input raises `ValueError`.
+3. Write `format_cents` with `divmod` and an f-string. The output follows DIN 5008: 123456 cents become “1.234,56 €”.
+4. Write `is_free` so that `0` is free and `None` is not.
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -21,4 +23,4 @@ uv run pytest
 uv run mypy --strict .
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 01` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 01` checks the starting point and the solution of this exercise.

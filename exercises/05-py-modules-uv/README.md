@@ -1,19 +1,21 @@
-# Ein Projekt mit uv statt pip und venv von Hand
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach legst du mit uv ein Paket im src-Layout an, teilst Code in Module und startest ihn als eigenen Befehl.
+# A project with uv instead of manual pip and venv
 
-**Aufgabe:** Teil cli.py in die Module money und orders auf, trag den Befehl werkstatt in pyproject.toml ein und starte ihn mit uv run werkstatt 2x1299.
+**Learning goal:** After this, you can create a package with uv in the src layout, split code into modules, and start it as its own command.
 
-## Schritte
+**Task:** Split cli.py into the money and orders modules, add the command werkstatt to pyproject.toml, and run it with uv run werkstatt 2x1299.
 
-1. Wechsle nach `start/` und führ `uv sync` aus. Diese Übung ist ein eigenes uv-Projekt mit eigener `.venv`.
-2. Teil `src/werkstatt/cli.py` in die Module `money.py` und `orders.py` auf und importiere sie absolut (`from werkstatt.money import format_cents`).
-3. Pass `src/werkstatt/__init__.py` an, damit es die Funktionen aus den neuen Modulen exportiert.
-4. Trag den Befehl `werkstatt = "werkstatt.cli:main"` unter `[project.scripts]` ein, führ `uv sync` aus und starte `uv run werkstatt 2x1299 1x2499`.
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Change into `start/` and run `uv sync`. This exercise is its own uv project with its own `.venv`.
+2. Split `src/werkstatt/cli.py` into the modules `money.py` and `orders.py` and import them absolutely (`from werkstatt.money import format_cents`).
+3. Adjust `src/werkstatt/__init__.py` so that it exports the functions from the new modules.
+4. Register the command `werkstatt = "werkstatt.cli:main"` under `[project.scripts]`, run `uv sync`, and start `uv run werkstatt 2x1299 1x2499`.
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -22,4 +24,4 @@ uv run pytest
 uv run mypy --strict src tests
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 05` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 05` checks the starting point and the solution of this exercise.

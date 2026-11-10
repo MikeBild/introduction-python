@@ -7,7 +7,7 @@ from pricing import invoice_total
 
 pytestmark = pytest.mark.skip(reason="Entferne diese Zeile, um die Tests zu aktivieren.")
 
-# TODO: Sobald pricing.py NewTypes hat, erzeuge die IDs mit OrderId("o-1"), CustomerId("c-ada") …
+# TODO: As soon as pricing.py has NewTypes, create the IDs with OrderId("o-1"), CustomerId("c-ada") …
 orders = [
     {
         "id": "o-1",

@@ -1,4 +1,4 @@
-"""Produkte und Bestellungen als Dateien: pathlib, with, json und csv."""
+"""Products and orders as files: pathlib, with, json and csv."""
 
 import csv
 import json
@@ -28,29 +28,29 @@ class Order(TypedDict):
 
 
 def load_products(path: Path) -> list[Product]:
-    """Liest eine JSON-Datei mit einer Liste von Produkten."""
+    """Reads a JSON file with a list of products."""
     with path.open(encoding="utf-8") as file:
         products: list[Product] = json.load(file)
     return products
 
 
 def save_order(directory: Path, order: Order) -> Path:
-    """Schreibt eine Bestellung als <id>.json; legt das Verzeichnis bei Bedarf an."""
+    """Writes an order as <id>.json; creates the directory when needed."""
     directory.mkdir(parents=True, exist_ok=True)
     target = directory / f"{order['id']}.json"
     temporary = target.with_suffix(".tmp")
     temporary.write_text(json.dumps(order, ensure_ascii=False, indent=2), encoding="utf-8")
-    temporary.replace(target)  # erst vollständig schreiben, dann umbenennen
+    temporary.replace(target)  # write completely first, then rename
     return target
 
 
 def load_orders(directory: Path) -> list[Order]:
-    """Liest alle Bestellungen eines Verzeichnisses, sortiert nach Dateiname."""
+    """Reads all orders of a directory, sorted by file name."""
     return [json.loads(path.read_text(encoding="utf-8")) for path in sorted(directory.glob("*.json"))]
 
 
 def export_csv(orders: list[Order], path: Path) -> None:
-    """Eine Zeile je Position, für die Tabellenkalkulation."""
+    """One row per line item, for the spreadsheet."""
     fields = ["orderId", "customerId", "productId", "quantity", "priceCents"]
     with path.open("w", encoding="utf-8", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=fields)

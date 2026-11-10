@@ -1,4 +1,4 @@
-"""Geldbeträge in ganzen Cent parsen und formatieren."""
+"""Parse and format amounts of money in whole cents."""
 
 import sys
 from importlib.metadata import version
@@ -16,7 +16,7 @@ def to_cents(euros: str) -> int:
 def format_cents(cents: int) -> str:
     sign = "-" if cents < 0 else ""
     euros, rest = divmod(abs(cents), 100)
-    # Tausenderpunkt: 123456 Cent → "1.234,56 €"
+    # Thousands separator: 123456 cents → "1.234,56 €"
     return f"{sign}{euros:_}".replace("_", ".") + f",{rest:02d} €"
 
 

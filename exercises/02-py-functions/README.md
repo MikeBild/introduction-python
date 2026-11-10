@@ -1,18 +1,20 @@
-# Funktionen mit klarer Signatur statt Flag-Parametern
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach schreibst du Funktionen mit Defaults und Keyword-only-Argumenten und vermeidest geteilte Default-Listen.
+# Clear function signatures instead of flag parameters
 
-**Aufgabe:** Mach den Rabatt in order_total zum Keyword-only-Argument, repariere die geteilte Default-Liste in add_item und schreib make_discount als Closure.
+**Learning goal:** After this, you will write functions with defaults and keyword-only arguments, and avoid shared default lists.
 
-## Schritte
+**Task:** Make the discount in order_total a keyword-only argument, fix the shared default list in add_item, and write make_discount as a closure.
 
-1. Mach `discount_percent` in `order_total` zum Keyword-only-Argument und summiere die Positionen.
-2. Repariere `add_item`: `None` als Default, die übergebene Liste bleibt unverändert.
-3. Schreib `make_discount` als Closure.
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Make `discount_percent` in `order_total` a keyword-only argument and sum the line items.
+2. Fix `add_item`: `None` as default, the list passed in stays unchanged.
+3. Write `make_discount` as a closure.
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -20,4 +22,4 @@ uv run pytest
 uv run mypy --strict .
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 02` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 02` checks the starting point and the solution of this exercise.

@@ -1,4 +1,4 @@
-"""HTTP-API mit Flask 3. Start: uv run flask --app app run --debug"""
+"""HTTP API with Flask 3. Start: uv run flask --app app run --debug"""
 
 from flask import Flask
 from flask.typing import ResponseReturnValue
@@ -7,7 +7,7 @@ from shop import Store, product_to_json
 
 
 def create_app(store: Store | None = None) -> Flask:
-    """App Factory: jeder Test bekommt eine eigene App mit eigenem Store."""
+    """App factory: every test gets its own app with its own store."""
     app = Flask(__name__)
     shop = store if store is not None else Store.with_demo_data()
 
@@ -19,16 +19,16 @@ def create_app(store: Store | None = None) -> Flask:
     def list_products() -> ResponseReturnValue:
         return [product_to_json(product) for product in shop.products.values()]
 
-    # TODO: GET /orders/<order_id> → order_to_json(order) oder 404 mit {"error": "order not found"}
+    # TODO: GET /orders/<order_id> → order_to_json(order) or 404 with {"error": "order not found"}
 
     # TODO: POST /orders
-    #   - Body mit request.get_json(silent=True) lesen und mit parse_place_order prüfen
-    #   - shop.place_order(...) aufrufen
-    #   - 201 mit Location-Header /orders/<id> zurückgeben
+    #   - read the body with request.get_json(silent=True) and validate it with parse_place_order
+    #   - call shop.place_order(...)
+    #   - return 201 with the Location header /orders/<id>
 
-    # TODO: Error Handler mit @app.errorhandler(...)
+    # TODO: error handlers with @app.errorhandler(...)
     #   - ValidationError → 400 {"error": "invalid input", "issues": [...]}
     #   - UnknownProduct → 422, InsufficientStock → 409
-    #   - HTTPException (z. B. unbekannte Route) → JSON statt HTML
+    #   - HTTPException (for example an unknown route) → JSON instead of HTML
 
     return app

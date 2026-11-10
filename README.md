@@ -1,114 +1,116 @@
-# Übungen: Python
+*English · [Deutsch](README.de.md)*
 
-Übungs-Repo zum Workshop „Python für Entwickler mit uv, pytest und Flask“. Zu jeder der 17 Lektionen gibt es eine Übung mit Startpunkt, Tests und Lösung. Alle Übungen spielen im Werkstatt-Shop mit Produkten und Bestellungen.
+# Exercises: Python
 
-## Was du lernst
+Exercise repository for the workshop “Python for developers with uv, pytest and Flask”. Each of the 17 lessons has an exercise with a starting point, tests and a reference solution. All exercises play in the workshop shop with products and orders.
 
-- Werte, Funktionen, Collections und Dataclasses mit Type Hints nutzen
-- Fehler gezielt behandeln, Dateien lesen und mit pytest und mypy prüfen
-- Projekte mit uv anlegen und mit Flask 3 eine HTTP-API bauen
+## What you learn
 
-## Voraussetzungen
+- Use values, functions, collections and dataclasses with type hints
+- Handle errors deliberately, read files, and check code with pytest and mypy
+- Set up projects with uv and build an HTTP API with Flask 3
 
-- **uv** – verwaltet Python-Versionen, Umgebungen und Pakete ([Installation](https://docs.astral.sh/uv/getting-started/installation/)). Prüfen mit `uv --version`.
-- **Python 3.15** – `uv sync` liest die Version aus [`.python-version`](.python-version) und installiert sie bei Bedarf.
+## Prerequisites
 
-## Einrichten
+- **uv** – manages Python versions, environments and packages ([installation](https://docs.astral.sh/uv/getting-started/installation/)). Check with `uv --version`.
+- **Python 3.15** – `uv sync` reads the version from [`.python-version`](.python-version) and installs it when needed.
+
+## Setup
 
 ```bash
 git clone https://github.com/MikeBild/introduction-python.git
 cd introduction-python
-uv sync                          # installiert Python 3.15 aus .python-version, falls nötig
-uv run python scripts/check.py   # pytest und mypy --strict für alle Übungen
+uv sync                          # installs Python 3.15 from .python-version if needed
+uv run python scripts/check.py   # pytest and mypy --strict for all exercises
 ```
 
-## So arbeitest du mit einer Übung
+## How to work on an exercise
 
 ```text
 exercises/
   01-py-values-types/
-    README.md          Aufgabe, Schritte, Prüfen
-    start/             dein Startpunkt mit TODO-Kommentaren
+    README.md          task, steps, check
+    start/             your starting point with TODO comments
       money.py
-      test_money.py    Tests mit pytestmark = skip – entferne die Zeile, um sie zu aktivieren
-    solution/          eine mögliche Lösung, gleiche Struktur
-data/                  Beispieldaten: products.json, orders.json, orders.jsonl
-docs/                  die Domäne des Werkstatt-Shops
-scripts/check.py       prüft Startpunkt und Lösung aller Übungen
+      test_money.py    tests with pytestmark = skip – remove the line to activate them
+    solution/          one possible solution, same structure
+data/                  sample data: products.json, orders.json, orders.jsonl
+docs/                  the domain of the workshop shop
+scripts/check.py       checks the starting point and the solution of every exercise
 ```
 
-1. Lies das `README.md` der Übung und öffne den Startpunkt in `start/`.
-2. Entferne in der Testdatei die Zeile `pytestmark = pytest.mark.skip(...)` und bearbeite die TODOs, bis pytest und mypy grün sind.
-3. Vergleiche danach mit `solution/`.
+1. Read the exercise's `README.md` and open the starting point in `start/`.
+2. Remove the line `pytestmark = pytest.mark.skip(...)` in the test file and work through the TODOs until pytest and mypy are green.
+3. Then compare with `solution/`.
 
 ```bash
 cd exercises/04-py-comprehensions/start
-uv run pytest            # Tests dieser Übung
-uv run mypy --strict .   # Typprüfung
+uv run pytest            # tests of this exercise
+uv run mypy --strict .   # type check
 ```
 
-Alle Übungen teilen sich eine `pyproject.toml` und eine `.venv` im Hauptverzeichnis. Ausnahmen sind 05 und 15: Dort lernst du, ein eigenes Paket anzulegen, deshalb hat die Übung ihr eigenes uv-Projekt.
+All exercises share one `pyproject.toml` and one `.venv` in the root folder. The exceptions are 05 and 15: there you learn to create your own package, so the exercise has its own uv project.
 
-Vom Hauptverzeichnis aus:
+From the root folder:
 
-| Befehl | Was es tut |
+| Command | What it does |
 | --- | --- |
-| `uv run python scripts/check.py` | pytest und mypy für alle Startpunkte und Lösungen |
-| `uv run python scripts/check.py 04 11` | nur die Übungen 04 und 11 |
-| `uv run python scripts/check.py --solution` | nur die Lösungen |
+| `uv run python scripts/check.py` | pytest and mypy for all starting points and solutions |
+| `uv run python scripts/check.py 04 11` | only exercises 04 and 11 |
+| `uv run python scripts/check.py --solution` | only the solutions |
 
-## Übungen
+## Exercises
 
-| Nr. | Lektion | Übung |
+| No. | Lesson | Exercise |
 | --- | --- | --- |
-| 01 | Namen zeigen auf Werte, Werte haben Typen | [01-py-values-types](exercises/01-py-values-types) |
-| 02 | Funktionen mit klarer Signatur statt Flag-Parametern | [02-py-functions](exercises/02-py-functions) |
-| 03 | Welche Collection passt zu deinen Daten? | [03-py-collections](exercises/03-py-collections) |
-| 04 | Comprehensions statt Schleifen mit append | [04-py-comprehensions](exercises/04-py-comprehensions) |
-| 05 | Ein Projekt mit uv statt pip und venv von Hand | [05-py-modules-uv](exercises/05-py-modules-uv) |
-| 06 | Dataclasses statt Klassen voller Boilerplate | [06-py-classes-dataclasses](exercises/06-py-classes-dataclasses) |
-| 07 | Welche Exception fängst du, welche nicht? | [07-py-errors](exercises/07-py-errors) |
-| 08 | Dateien mit pathlib und with sicher lesen und schreiben | [08-py-files-json](exercises/08-py-files-json) |
-| 09 | Type Hints prüft mypy, nicht Python | [09-py-type-hints](exercises/09-py-type-hints) |
-| 10 | Mit pytest Behavior prüfen statt Details | [10-py-testing-pytest](exercises/10-py-testing-pytest) |
-| 11 | Eine HTTP-API mit Flask für den Werkstatt-Shop | [11-py-http-api-flask](exercises/11-py-http-api-flask) |
+| 01 | Names point to values, values have types | [01-py-values-types](exercises/01-py-values-types) |
+| 02 | Clear function signatures instead of flag parameters | [02-py-functions](exercises/02-py-functions) |
+| 03 | Which collection fits your data? | [03-py-collections](exercises/03-py-collections) |
+| 04 | Comprehensions instead of loops with append | [04-py-comprehensions](exercises/04-py-comprehensions) |
+| 05 | A project with uv instead of manual pip and venv | [05-py-modules-uv](exercises/05-py-modules-uv) |
+| 06 | Dataclasses instead of boilerplate-heavy classes | [06-py-classes-dataclasses](exercises/06-py-classes-dataclasses) |
+| 07 | Which exception do you catch, and which do you not? | [07-py-errors](exercises/07-py-errors) |
+| 08 | Read and write JSON and CSV safely with pathlib | [08-py-files-json](exercises/08-py-files-json) |
+| 09 | mypy checks type hints, not Python | [09-py-type-hints](exercises/09-py-type-hints) |
+| 10 | Check behavior with pytest, not details | [10-py-testing-pytest](exercises/10-py-testing-pytest) |
+| 11 | An HTTP API with Flask for the workshop shop | [11-py-http-api-flask](exercises/11-py-http-api-flask) |
 
-### Zusatzkapitel
+### Extra chapters
 
-| Nr. | Lektion | Übung |
+| No. | Lesson | Exercise |
 | --- | --- | --- |
-| 12 | Bestellungen mit pandas auswerten statt mit Schleifen | [12-py-pandas-orders](exercises/12-py-pandas-orders) |
-| 13 | Im Notebook erkunden, im Modul festhalten | [13-py-jupyter](exercises/13-py-jupyter) |
-| 14 | Mit asyncio warten, ohne zu blockieren | [14-py-asyncio](exercises/14-py-asyncio) |
-| 15 | Ein Paket bauen, das andere installieren können | [15-py-packaging](exercises/15-py-packaging) |
-| 16 | Generatoren liefern Werte erst auf Nachfrage | [16-py-generators](exercises/16-py-generators) |
-| 17 | Decorators fügen Verhalten hinzu, ohne Code zu ändern | [17-py-decorators](exercises/17-py-decorators) |
+| 12 | Analyze orders with pandas instead of loops | [12-py-pandas-orders](exercises/12-py-pandas-orders) |
+| 13 | Explore in notebooks, keep logic in modules | [13-py-jupyter](exercises/13-py-jupyter) |
+| 14 | Wait with asyncio without blocking | [14-py-asyncio](exercises/14-py-asyncio) |
+| 15 | Build a package others can install | [15-py-packaging](exercises/15-py-packaging) |
+| 16 | Generators return values only on demand | [16-py-generators](exercises/16-py-generators) |
+| 17 | Decorators add behavior without changing code | [17-py-decorators](exercises/17-py-decorators) |
 
-## Der Werkstatt-Shop
+## The workshop shop
 
-Eine Bestellung besteht aus Positionen mit `productId`, `quantity` und `priceCents`. Geld steht immer in ganzen Cent. Die ganze Domäne beschreibt [`docs/beispiel-domaene.md`](docs/beispiel-domaene.md).
+An order consists of line items with `productId`, `quantity` and `priceCents`. Money is always in whole cents. The whole domain is described in [`docs/beispiel-domaene.md`](docs/beispiel-domaene.md).
 
-## Stack und Pakete
+## Stack and packages
 
-**Stack (Oktober 2026):** Python 3.15 · uv als einziges Tool für Python-Versionen, Umgebungen und Pakete · pytest · Type Hints mit mypy `--strict` · Flask 3 · pandas 3 und JupyterLab für die Datenanalyse
+**Stack (October 2026):** Python 3.15 · uv as the only tool for Python versions, environments and packages · pytest · type hints with mypy `--strict` · Flask 3 · pandas 3 and JupyterLab for data analysis
 
-Bewusst wenige Pakete:
+Deliberately few packages:
 
-| Paket | Wofür | Warum dieses |
+| Package | For | Why this one |
 | --- | --- | --- |
-| `flask` | HTTP-API | Routing, JSON und Test Client in einem Paket; FastAPI bräuchte zusätzlich Starlette, Pydantic, einen ASGI-Server und httpx für Tests |
-| `pytest` | Tests | Tests als einfache Funktionen mit `assert`, Fixtures und `parametrize` |
-| `mypy` | Typprüfung | läuft als Python-Paket direkt mit uv, ohne zusätzliche Laufzeit |
-| `pandas`, `pandas-stubs`, `jupyterlab` | Zusatzkapitel Datenanalyse | Gruppe `data`, nur für die Übungen 12 und 13 |
+| `flask` | HTTP API | routing, JSON and test client in one package; FastAPI would also need Starlette, Pydantic, an ASGI server and httpx for tests |
+| `pytest` | tests | tests as plain functions with `assert`, fixtures and `parametrize` |
+| `mypy` | type checking | runs as a Python package directly with uv, without an extra runtime |
+| `pandas`, `pandas-stubs`, `jupyterlab` | extra chapters on data analysis | group `data`, only for exercises 12 and 13 |
 
-Für asyncio, Dateien, JSON, CSV, Generatoren und Decorators reicht die Standardbibliothek.
+For asyncio, files, JSON, CSV, generators and decorators the standard library is enough.
 
-## Workshop und Folien
+## Workshop and slides
 
-- Workshop: [„Python für Entwickler mit uv, pytest und Flask“](https://workshops.mikebild.dev/w/python/remote/)
-- Folien: [slides.mikebild.dev/introduction-python](https://slides.mikebild.dev/introduction-python.html)
+- Workshop: [“Python for developers with uv, pytest and Flask”](https://workshops.mikebild.dev/w/python/remote/)
+- Slides: [slides.mikebild.dev/introduction-python](https://slides.mikebild.dev/introduction-python.html)
 - PDF: [slides.mikebild.dev/introduction-python.pdf](https://slides.mikebild.dev/introduction-python.pdf)
-- Beiträge auf mikebild.dev:
+- Articles on mikebild.dev (in German):
   - [Fortgeschrittenes Python: Decorators, Magic Methods und Generatoren](https://www.mikebild.dev/de/blog/python-advanced-decorators-generatoren/)
   - [Funktionale Muster in Python: Comprehensions, itertools und functools](https://www.mikebild.dev/de/blog/funktionale-muster-in-python/)
   - [Web-APIs mit Flask: von der App zur JSON-API](https://www.mikebild.dev/de/blog/web-apis-mit-flask/)
@@ -116,10 +118,10 @@ Für asyncio, Dateien, JSON, CSV, Generatoren und Decorators reicht die Standard
   - [Daten einlesen in Python: CSV, JSON, Excel und Datenbank](https://www.mikebild.dev/de/blog/python-daten-einlesen/)
   - [Datenanalyse mit NumPy, Pandas und Matplotlib](https://www.mikebild.dev/de/blog/datenanalyse-mit-pandas/)
 
-## Archiv
+## Archive
 
-Das Material von 2018 (Python 3.6, Flask, NumPy, Matplotlib, pandas) liegt unverändert in [`legacy/`](legacy/) und wird nicht mehr gepflegt.
+The material from 2018 (Python 3.6, Flask, NumPy, Matplotlib, pandas) sits unchanged in [`archive/`](archive/) and is no longer maintained.
 
-## Lizenz
+## License
 
 [MIT](LICENSE)

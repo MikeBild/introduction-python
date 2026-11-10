@@ -1,4 +1,4 @@
-"""Bestellungen mit pandas auswerten: eine Zeile je Position, dann gruppieren."""
+"""Analyze orders with pandas: one row per line item, then group."""
 
 import json
 from pathlib import Path
@@ -7,7 +7,7 @@ import pandas as pd
 
 
 def load_items(path: Path) -> pd.DataFrame:
-    """Flacht die verschachtelten Bestellungen ab: eine Zeile je Position."""
+    """Flattens the nested orders: one row per line item."""
     orders = json.loads(path.read_text(encoding="utf-8"))
     items = pd.json_normalize(
         orders, record_path="items", meta=["id", "customerId", "status", "createdAt"]
@@ -19,24 +19,24 @@ def load_items(path: Path) -> pd.DataFrame:
 
 
 def completed(items: pd.DataFrame) -> pd.DataFrame:
-    """Nur Bestellungen, die zählen: stornierte und Entwürfe fallen weg."""
+    """Only orders that count: cancelled ones and drafts are dropped."""
     return items[~items["status"].isin(["cancelled", "draft"])]
 
 
 def revenue_by_product(items: pd.DataFrame) -> pd.Series:
-    """Umsatz in Cent je Produkt, absteigend."""
+    """Revenue in cents per product, descending."""
     return completed(items).groupby("productId")["revenueCents"].sum().sort_values(ascending=False)
 
 
 def revenue_by_month(items: pd.DataFrame) -> pd.Series:
-    """Umsatz in Cent je Monat im Format 2026-07."""
+    """Revenue in cents per month in the format 2026-07."""
     done = completed(items)
     month = done["createdAt"].dt.strftime("%Y-%m")
     return done.groupby(month)["revenueCents"].sum().sort_index()
 
 
 def customer_summary(items: pd.DataFrame) -> pd.DataFrame:
-    """Je Kundin: Anzahl Bestellungen und Umsatz, nach Umsatz sortiert."""
+    """Per customer: number of orders and revenue, sorted by revenue."""
     return (
         completed(items)
         .groupby("customerId")

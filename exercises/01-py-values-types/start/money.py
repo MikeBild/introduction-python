@@ -1,22 +1,22 @@
-"""Geldbeträge im Werkstatt-Shop: immer ganze Cent als int, nie float."""
+"""Money in the workshop shop: always whole cents as int, never float."""
 
 
 def to_cents(euros: str) -> int:
-    """Wandelt "12,34" oder "12.34" in 1234 Cent um."""
-    # TODO: Leerzeichen entfernen, Komma durch Punkt ersetzen, mit partition(".") teilen.
-    # TODO: Ungültige Eingaben ("", "abc", "1,234", "-3") mit ValueError ablehnen.
-    # Tipp: float("12.34") * 100 ergibt 1233.9999999999998 – rechne mit int.
+    """Converts "12,34" or "12.34" into 1234 cents."""
+    # TODO: Strip whitespace, replace the comma with a dot, split with partition(".").
+    # TODO: Reject invalid input ("", "abc", "1,234", "-3") with ValueError.
+    # Tip: float("12.34") * 100 gives 1233.9999999999998 – calculate with int.
     raise NotImplementedError
 
 
 def format_cents(cents: int) -> str:
-    """Formatiert 1234 als "12,34 €" und 123456 als "1.234,56 €"."""
-    # TODO: divmod(abs(cents), 100) und ein f-String mit {rest:02d}
-    # Tipp: f"{123456:_}" ergibt "123_456" – daraus wird der Tausenderpunkt.
+    """Formats 1234 as "12,34 €" and 123456 as "1.234,56 €"."""
+    # TODO: divmod(abs(cents), 100) and an f-string with {rest:02d}
+    # Tip: f"{123456:_}" gives "123_456" – that becomes the thousands separator.
     raise NotImplementedError
 
 
 def is_free(price_cents: int | None) -> bool:
-    """None heißt: Preis unbekannt. Das ist nicht dasselbe wie gratis."""
-    # TODO: Achtung, `not price_cents` ist auch für None wahr.
+    """None means: price unknown. That is not the same as free."""
+    # TODO: Careful, `not price_cents` is also true for None.
     raise NotImplementedError

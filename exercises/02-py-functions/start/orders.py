@@ -1,4 +1,4 @@
-"""Funktionen rund um Bestellpositionen: (product_id, quantity, price_cents)."""
+"""Functions around order line items: (product_id, quantity, price_cents)."""
 
 from collections.abc import Callable, Iterable
 
@@ -10,21 +10,21 @@ def line_total(quantity: int, price_cents: int) -> int:
 
 
 def order_total(items: Iterable[Item], discount_percent: int = 0) -> int:
-    """Summe aller Positionen."""
-    # TODO: Mach discount_percent zu einem Keyword-only-Argument (Stern in der Signatur).
-    # TODO: Summiere line_total über alle Positionen und zieh den Rabatt in ganzen Cent ab.
+    """Sum of all line items."""
+    # TODO: Make discount_percent a keyword-only argument (star in the signature).
+    # TODO: Sum line_total over all line items and subtract the discount in whole cents.
     raise NotImplementedError
 
 
 def add_item(item: Item, items: list[Item] = []) -> list[Item]:
-    """Soll eine neue Liste zurückgeben, ohne die übergebene zu ändern."""
-    # TODO: Der Default [] wird nur einmal erzeugt und von allen Aufrufen geteilt.
-    #       Nutze None als Default und kopiere die übergebene Liste.
+    """Should return a new list without changing the one passed in."""
+    # TODO: The default [] is created only once and shared by all calls.
+    #       Use None as the default and copy the list passed in.
     items.append(item)
     return items
 
 
 def make_discount(percent: int) -> Callable[[int], int]:
-    """Gibt eine Funktion zurück, die einen Betrag um percent Prozent reduziert."""
-    # TODO: innere Funktion definieren und zurückgeben (Closure)
+    """Returns a function that reduces an amount by percent percent."""
+    # TODO: define and return an inner function (closure)
     raise NotImplementedError

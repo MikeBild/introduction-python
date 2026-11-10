@@ -1,4 +1,4 @@
-"""Funktionen rund um Bestellpositionen: (product_id, quantity, price_cents)."""
+"""Functions around order line items: (product_id, quantity, price_cents)."""
 
 from collections.abc import Callable, Iterable
 
@@ -10,7 +10,7 @@ def line_total(quantity: int, price_cents: int) -> int:
 
 
 def order_total(items: Iterable[Item], *, discount_percent: int = 0) -> int:
-    """Summe aller Positionen; der Rabatt ist ein Keyword-only-Argument."""
+    """Sum of all line items; the discount is a keyword-only argument."""
     subtotal = 0
     for _product_id, quantity, price_cents in items:
         subtotal += line_total(quantity, price_cents)
@@ -18,14 +18,14 @@ def order_total(items: Iterable[Item], *, discount_percent: int = 0) -> int:
 
 
 def add_item(item: Item, items: list[Item] | None = None) -> list[Item]:
-    """Gibt eine neue Liste zurück, ohne die übergebene zu ändern."""
+    """Returns a new list without changing the one passed in."""
     result = [] if items is None else list(items)
     result.append(item)
     return result
 
 
 def make_discount(percent: int) -> Callable[[int], int]:
-    """Closure: die innere Funktion merkt sich percent."""
+    """Closure: the inner function remembers percent."""
 
     def discount(total_cents: int) -> int:
         return total_cents - total_cents * percent // 100

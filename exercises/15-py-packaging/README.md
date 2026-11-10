@@ -1,19 +1,21 @@
-# Ein Paket bauen, das andere installieren können
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach baust du mit uv build ein typisiertes Wheel mit Metadaten und Befehl und prüfst es, bevor du es veröffentlichst.
+# Build a package others can install
 
-**Aufgabe:** Ergänz in pyproject.toml Version, Beschreibung, Lizenz und den Befehl werkstatt-money, leg py.typed an und prüf das Wheel mit den Tests.
+**Learning goal:** After this, you use uv build to build a typed Wheel with metadata and a command, and check it before publishing.
 
-## Schritte
+**Task:** Add version, description, license, and the werkstatt-money command in pyproject.toml, create py.typed, and check the Wheel with the tests.
 
-1. Wechsle nach `start/` und führ `uv sync` aus. Diese Übung ist ein eigenes uv-Projekt.
-2. Ergänz in `pyproject.toml` Version `1.0.0`, `description`, `readme`, `license = "MIT"` und den Befehl `werkstatt-money`.
-3. Leg die leere Datei `src/werkstatt_money/py.typed` an.
-4. Bau mit `uv build` und probier `uvx --from ./dist/werkstatt_money-1.0.0-py3-none-any.whl werkstatt-money 12,34`.
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Change into `start/` and run `uv sync`. This exercise is its own uv project.
+2. Add version `1.0.0`, `description`, `readme`, `license = "MIT"` and the command `werkstatt-money` to `pyproject.toml`.
+3. Create the empty file `src/werkstatt_money/py.typed`.
+4. Build with `uv build` and try `uvx --from ./dist/werkstatt_money-1.0.0-py3-none-any.whl werkstatt-money 12,34`.
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -22,4 +24,4 @@ uv run pytest
 uv run mypy --strict src tests
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 15` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 15` checks the starting point and the solution of this exercise.

@@ -1,19 +1,21 @@
-# Type Hints prüft mypy, nicht Python
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach annotierst du ein Modul mit NewType, Literal, TypedDict und X | None, sodass mypy --strict es ohne Fehler prüft.
+# mypy checks type hints, not Python
 
-**Aufgabe:** Annotier pricing.py mit NewType-IDs, Literal und TypedDict, bis uv run mypy --strict sauber ist, und behebe den Bug, den mypy dabei findet.
+**Learning goal:** After this, you annotate a module with NewType, Literal, TypedDict, and X | None so mypy --strict checks it without errors.
 
-## Schritte
+**Task:** Annotate pricing.py with NewType IDs, Literal, and TypedDict until uv run mypy --strict is clean, and fix the bug mypy finds.
 
-1. Führ `uv run mypy --strict pricing.py` in `start/` aus und lies die Meldungen.
-2. Leg `OrderId`, `CustomerId` und `ProductId` als `NewType` an, den Status als `Literal`, `OrderItem` und `Order` als `TypedDict`.
-3. Annotier alle Funktionen. `find_order` gibt `Order | None` zurück.
-4. Behebe den Fehler in `invoice_total`, den mypy jetzt meldet, und pass die Tests an die NewTypes an.
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Run `uv run mypy --strict pricing.py` in `start/` and read the messages.
+2. Define `OrderId`, `CustomerId` and `ProductId` as `NewType`, the status as `Literal`, `OrderItem` and `Order` as `TypedDict`.
+3. Annotate all functions. `find_order` returns `Order | None`.
+4. Fix the error in `invoice_total` that mypy now reports and adapt the tests to the NewTypes.
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -21,4 +23,4 @@ uv run pytest
 uv run mypy --strict .
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 09` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 09` checks the starting point and the solution of this exercise.

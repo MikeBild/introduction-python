@@ -1,11 +1,11 @@
-"""Rechnungssummen – noch ohne Typ-Hinweise.
+"""Invoice totals – without type hints so far.
 
 TODO:
-1. uv run mypy --strict pricing.py ausführen und die Meldungen lesen.
-2. IDs als NewType anlegen: OrderId, CustomerId, ProductId.
-3. Status als Literal, OrderItem und Order als TypedDict beschreiben.
-4. Alle Funktionen annotieren. find_order gibt Order | None zurück.
-5. mypy findet danach den Fehler in invoice_total. Behebe ihn.
+1. Run uv run mypy --strict pricing.py and read the messages.
+2. Define the IDs as NewType: OrderId, CustomerId, ProductId.
+3. Describe the status as Literal, OrderItem and Order as TypedDict.
+4. Annotate all functions. find_order returns Order | None.
+5. mypy then finds the error in invoice_total. Fix it.
 """
 
 

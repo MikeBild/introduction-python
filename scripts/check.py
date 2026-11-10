@@ -1,12 +1,12 @@
-"""Prüft alle Übungen: pytest und mypy --strict je Startpunkt und Lösung.
+"""Checks all exercises: pytest and mypy --strict per starting point and reference solution.
 
-uv run python scripts/check.py            alle Übungen
-uv run python scripts/check.py 05 11      nur die Übungen 05 und 11
-uv run python scripts/check.py --solution nur die Lösungen
+uv run python scripts/check.py            all exercises
+uv run python scripts/check.py 05 11      only exercises 05 and 11
+uv run python scripts/check.py --solution only the solutions
 
-Jede Übung läuft in ihrem eigenen Verzeichnis, damit gleichnamige Module
-(etwa shop.py in start/ und solution/) sich nicht in die Quere kommen.
-Übungen mit eigener pyproject.toml (Pakete) laufen mit uv in ihrer eigenen Umgebung.
+Every exercise runs in its own directory so that modules with the same name
+(such as shop.py in start/ and solution/) do not get in each other's way.
+Exercises with their own pyproject.toml (packages) run with uv in their own environment.
 """
 
 import subprocess
@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-# Startpunkte, die absichtlich noch keine Typ-Hinweise haben
+# starting points that deliberately have no type hints yet
 UNTYPED_STARTS = {"09-py-type-hints"}
 
 

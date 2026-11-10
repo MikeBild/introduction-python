@@ -1,18 +1,20 @@
-# Dataclasses statt Klassen voller Boilerplate
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach modellierst du Bestellung und Position als Dataclasses mit StrEnum-Status und Methoden, die Regeln prüfen.
+# Dataclasses instead of boilerplate-heavy classes
 
-**Aufgabe:** Mach aus OrderItem eine frozen Dataclass und aus Order eine Dataclass mit Statusregeln für place, advance und cancel.
+**Learning goal:** After this, you model Order and OrderItem as dataclasses with StrEnum status and methods that check rules.
 
-## Schritte
+**Task:** Turn OrderItem into a frozen dataclass and Order into a dataclass with status rules for place, advance, and cancel.
 
-1. Mach aus `OrderItem` eine `@dataclass(frozen=True, slots=True)` und lösch `__init__`, `__eq__` und `__repr__`.
-2. Prüf in `__post_init__`, dass `quantity` mindestens 1 ist, und ergänze die Property `total_cents`.
-3. Mach aus `Order` eine Dataclass mit `field(default_factory=list)` und schreib `place`, `advance` und `cancel` nach den Regeln aus `docs/beispiel-domaene.md`.
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Turn `OrderItem` into a `@dataclass(frozen=True, slots=True)` and delete `__init__`, `__eq__` and `__repr__`.
+2. Check in `__post_init__` that `quantity` is at least 1, and add the property `total_cents`.
+3. Turn `Order` into a dataclass with `field(default_factory=list)` and write `place`, `advance` and `cancel` following the rules in `docs/beispiel-domaene.md`.
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -20,4 +22,4 @@ uv run pytest
 uv run mypy --strict .
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 06` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 06` checks the starting point and the solution of this exercise.

@@ -1,4 +1,4 @@
-"""Auswertungen über Bestellungen. Ersetze jede Schleife mit append durch eine Comprehension."""
+"""Analyses over orders. Replace every loop with append with a comprehension."""
 
 from typing import Literal, TypedDict
 
@@ -22,35 +22,35 @@ def order_total(order: Order) -> int:
     total = 0
     for item in order["items"]:
         total += item["quantity"] * item["priceCents"]
-    return total  # TODO: als sum(... for ...) in einer Zeile
+    return total  # TODO: as sum(... for ...) in one line
 
 
 def totals_by_order(orders: list[Order]) -> dict[str, int]:
     totals = {}
     for order in orders:
         totals[order["id"]] = order_total(order)
-    return totals  # TODO: Dict Comprehension
+    return totals  # TODO: dict comprehension
 
 
 def open_order_ids(orders: list[Order]) -> list[str]:
-    """Nur Bestellungen im Status placed oder paid."""
-    # TODO: List Comprehension mit if
+    """Only orders in status placed or paid."""
+    # TODO: list comprehension with if
     raise NotImplementedError
 
 
 def products_sold(orders: list[Order]) -> set[str]:
-    """Alle Produkt-IDs aus nicht stornierten Bestellungen."""
-    # TODO: Set Comprehension mit zwei for-Klauseln
+    """All product IDs from orders that are not cancelled."""
+    # TODO: set comprehension with two for clauses
     raise NotImplementedError
 
 
 def all_items(orders: list[Order]) -> list[OrderItem]:
-    """Alle Positionen aller Bestellungen in einer flachen Liste."""
-    # TODO: Seit Python 3.15 geht [*order["items"] for order in orders]
+    """All line items of all orders in one flat list."""
+    # TODO: Since Python 3.15, [*order["items"] for order in orders] works
     raise NotImplementedError
 
 
 def top_orders(orders: list[Order], n: int = 3) -> list[tuple[str, int]]:
-    """Die n größten Bestellungen als (ID, Summe), absteigend."""
-    # TODO: sorted(..., key=..., reverse=True) und Slicing [:n]
+    """The n largest orders as (ID, total), descending."""
+    # TODO: sorted(..., key=..., reverse=True) and slicing [:n]
     raise NotImplementedError

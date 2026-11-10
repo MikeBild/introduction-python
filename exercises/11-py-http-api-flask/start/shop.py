@@ -1,4 +1,4 @@
-"""Fachlogik des Werkstatt-Shops, unabhängig von Flask."""
+"""Domain logic of the workshop shop, independent of Flask."""
 
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
@@ -52,7 +52,7 @@ class Order:
 
 
 def parse_place_order(payload: object) -> tuple[str, list[tuple[str, int]]]:
-    """Prüft den Body von POST /orders: {customerId, items: [{productId, quantity}]}, nichts sonst."""
+    """Validates the body of POST /orders: {customerId, items: [{productId, quantity}]}, nothing else."""
     if not isinstance(payload, dict):
         raise ValidationError(["body must be a JSON object"])
     issues = [f"unexpected field: {key}" for key in payload if key not in {"customerId", "items"}]

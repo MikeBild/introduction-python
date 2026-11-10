@@ -1,4 +1,4 @@
-"""Querschnittsverhalten als Decorator: messen, wiederholen, zwischenspeichern."""
+"""Cross-cutting behavior as decorators: measure, retry, cache."""
 
 import functools
 import time
@@ -6,7 +6,7 @@ from collections.abc import Callable
 
 
 def timed[**P, R](log: Callable[[str], None]) -> Callable[[Callable[P, R]], Callable[P, R]]:
-    """Decorator mit Argument: meldet die Dauer jedes Aufrufs an log."""
+    """Decorator with an argument: reports the duration of every call to log."""
 
     def decorator(func: Callable[P, R]) -> Callable[P, R]:
         @functools.wraps(func)
@@ -25,7 +25,7 @@ def timed[**P, R](log: Callable[[str], None]) -> Callable[[Callable[P, R]], Call
 def retry[**P, R](
     times: int, *, on: tuple[type[Exception], ...] = (ConnectionError,)
 ) -> Callable[[Callable[P, R]], Callable[P, R]]:
-    """Wiederholt bei den genannten Exceptions; andere fliegen sofort weiter."""
+    """Retries on the given exceptions; others propagate immediately."""
 
     def decorator(func: Callable[P, R]) -> Callable[P, R]:
         @functools.wraps(func)
@@ -45,5 +45,5 @@ def retry[**P, R](
 
 @functools.cache
 def shipping_cents(country: str) -> int:
-    """Teure Berechnung, Ergebnis je Land nur einmal."""
+    """Expensive calculation, result per country only once."""
     return {"DE": 490, "AT": 990, "CH": 1490}.get(country, 2490)

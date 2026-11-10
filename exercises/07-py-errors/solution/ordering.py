@@ -1,10 +1,10 @@
-"""Bestellungen aufgeben: fachliche Fehler als eigene Exception-Hierarchie."""
+"""Placing orders: domain errors as their own exception hierarchy."""
 
 from dataclasses import dataclass
 
 
 class OrderError(Exception):
-    """Basis für alle fachlichen Fehler beim Bestellen."""
+    """Base for all domain errors when ordering."""
 
 
 class InvalidQuantity(OrderError):
@@ -35,7 +35,7 @@ class Product:
 
 
 def parse_quantity(text: str) -> int:
-    """Wandelt Text in eine Menge ≥ 1; die Ursache bleibt per raise ... from erhalten."""
+    """Converts text into a quantity ≥ 1; the cause is preserved with raise ... from."""
     try:
         quantity = int(text)
     except ValueError as error:
@@ -46,7 +46,7 @@ def parse_quantity(text: str) -> int:
 
 
 def place_order(items: dict[str, int], catalog: dict[str, Product]) -> int:
-    """Prüft alle Positionen und gibt die Gesamtsumme in Cent zurück."""
+    """Checks all line items and returns the total in cents."""
     total = 0
     for product_id, quantity in items.items():
         try:
@@ -60,7 +60,7 @@ def place_order(items: dict[str, int], catalog: dict[str, Product]) -> int:
 
 
 def handle_place_order(items: dict[str, int], catalog: dict[str, Product]) -> tuple[int, dict[str, object]]:
-    """Übersetzt fachliche Fehler in Status Codes. Alles andere fliegt weiter."""
+    """Translates domain errors into status codes. Everything else propagates."""
     try:
         total = place_order(items, catalog)
     except UnknownProduct as error:

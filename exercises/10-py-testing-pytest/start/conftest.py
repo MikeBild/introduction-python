@@ -12,7 +12,7 @@ FIXED_NOW = datetime(2026, 10, 1, 9, 30, tzinfo=UTC)
 
 @pytest.fixture
 def catalog() -> dict[str, Product]:
-    """Jeder Test bekommt einen frischen Katalog."""
+    """Every test gets a fresh catalog."""
     return {
         "p-hammer": Product("p-hammer", "Hammer", 1299, 5),
         "p-saege": Product("p-saege", "Säge", 2499, 1),
@@ -21,7 +21,7 @@ def catalog() -> dict[str, Product]:
 
 @pytest.fixture
 def place(catalog: dict[str, Product]) -> Place:
-    """place_order mit fester Zeit und fester ID: jeder Lauf liefert dasselbe Ergebnis."""
+    """place_order with a fixed time and a fixed ID: every run gives the same result."""
 
     def run(items: dict[str, int]) -> PlacedOrder:
         return place_order("c-ada", items, catalog, now=lambda: FIXED_NOW, next_id=lambda: "o-1")

@@ -1,4 +1,4 @@
-"""HTTP-API mit Flask 3. Start: uv run flask --app app run --debug"""
+"""HTTP API with Flask 3. Start: uv run flask --app app run --debug"""
 
 from flask import Flask, request
 from flask.typing import ResponseReturnValue
@@ -16,7 +16,7 @@ from shop import (
 
 
 def create_app(store: Store | None = None) -> Flask:
-    """App Factory: jeder Test bekommt eine eigene App mit eigenem Store."""
+    """App factory: every test gets its own app with its own store."""
     app = Flask(__name__)
     shop = store if store is not None else Store.with_demo_data()
 

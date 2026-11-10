@@ -1,4 +1,4 @@
-"""Tests ohne Zusatzpaket: asyncio.run startet die Coroutine im synchronen Test."""
+"""Tests without an extra package: asyncio.run starts the coroutine in the synchronous test."""
 
 import asyncio
 import time
@@ -12,7 +12,7 @@ PRODUCTS = list(STOCK)
 
 
 class FakeWarehouse:
-    """Antwortet nach delay Sekunden und zählt, wie viele Abfragen gleichzeitig laufen."""
+    """Answers after delay seconds and counts how many queries run at the same time."""
 
     def __init__(self, delay: float = 0.05) -> None:
         self.delay = delay

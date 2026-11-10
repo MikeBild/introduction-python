@@ -1,4 +1,4 @@
-"""Große Bestelldateien lazy verarbeiten: eine Zeile nach der anderen."""
+"""Process large order files lazily: one line after another."""
 
 import json
 from collections.abc import Iterable, Iterator
@@ -10,7 +10,7 @@ type Order = dict[str, Any]
 
 
 def read_orders(path: Path) -> Iterator[Order]:
-    """Liest JSON Lines: je Zeile eine Bestellung. Die Datei bleibt nur so lange offen wie nötig."""
+    """Reads JSON Lines: one order per line. The file stays open only as long as needed."""
     with path.open(encoding="utf-8") as file:
         for line in file:
             if line.strip():
@@ -34,11 +34,11 @@ def running_total(amounts: Iterable[tuple[str, int]]) -> Iterator[int]:
 
 
 def in_batches(orders: Iterable[Order], size: int) -> Iterator[list[str]]:
-    """IDs in Paketen zu size Stück, etwa für einen Bulk-Request."""
+    """IDs in batches of size, for example for a bulk request."""
     for batch in batched(orders, size):
         yield [order["id"] for order in batch]
 
 
 def first_paid(path: Path, n: int) -> list[str]:
-    """Liest nur so viele Zeilen, wie für n bezahlte Bestellungen nötig sind."""
+    """Reads only as many lines as needed for n paid orders."""
     return [order["id"] for order in islice(with_status(read_orders(path), "paid"), n)]

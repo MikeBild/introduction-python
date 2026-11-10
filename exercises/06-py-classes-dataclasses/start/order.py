@@ -1,4 +1,4 @@
-"""Die Bestellung als Klasse. TODO: Mach daraus Dataclasses mit klaren Regeln."""
+"""The order as a class. TODO: Turn it into dataclasses with clear rules."""
 
 from enum import StrEnum
 
@@ -12,9 +12,9 @@ class Status(StrEnum):
 
 
 class OrderItem:
-    # TODO: @dataclass(frozen=True, slots=True) statt __init__, __eq__ und __repr__ von Hand
-    # TODO: __post_init__ lehnt quantity < 1 mit ValueError ab
-    # TODO: Property total_cents
+    # TODO: @dataclass(frozen=True, slots=True) instead of __init__, __eq__ and __repr__ by hand
+    # TODO: __post_init__ rejects quantity < 1 with ValueError
+    # TODO: property total_cents
     def __init__(self, product_id: str, quantity: int, price_cents: int) -> None:
         self.product_id = product_id
         self.quantity = quantity
@@ -38,12 +38,12 @@ class OrderItem:
 
 
 class Order:
-    # TODO: @dataclass(slots=True); items mit field(default_factory=list), status mit Default DRAFT
+    # TODO: @dataclass(slots=True); items with field(default_factory=list), status with default DRAFT
     def __init__(
         self,
         id: str,
         customer_id: str,
-        items: list[OrderItem] = [],  # TODO: geteilte Default-Liste!
+        items: list[OrderItem] = [],  # TODO: shared default list
         status: Status = Status.DRAFT,
     ) -> None:
         self.id = id
@@ -56,17 +56,17 @@ class Order:
         raise NotImplementedError
 
     def add_item(self, item: OrderItem) -> None:
-        # TODO: nur im Status draft erlaubt, sonst ValueError
+        # TODO: only allowed in status draft, otherwise ValueError
         self.items.append(item)
 
     def place(self) -> None:
-        # TODO: nur aus draft und nur mit mindestens einer Position
+        # TODO: only from draft and only with at least one line item
         raise NotImplementedError
 
     def advance(self) -> None:
-        """placed → paid → shipped, sonst ValueError"""
+        """placed → paid → shipped, otherwise ValueError"""
         raise NotImplementedError
 
     def cancel(self) -> None:
-        """nur aus draft oder placed"""
+        """only from draft or placed"""
         raise NotImplementedError

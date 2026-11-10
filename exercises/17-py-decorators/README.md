@@ -1,18 +1,20 @@
-# Decorators fügen Verhalten hinzu, ohne Code zu ändern
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach schreibst du typisierte Decorators mit Argumenten für Zeitmessung und Retry und nutzt functools.cache gezielt.
+# Decorators add behavior without changing code
 
-**Aufgabe:** Repariere timed mit functools.wraps und try/finally, schreib retry für ConnectionError und speichere shipping_cents mit functools.cache zwischen.
+**Learning goal:** After this, you write typed decorators with arguments for timing and retry, and use functools.cache deliberately.
 
-## Schritte
+**Task:** Fix timed with functools.wraps and try/finally, write retry for ConnectionError, and cache shipping_cents with functools.cache.
 
-1. Ergänze in `timed` `@functools.wraps(func)` und `try`/`finally`.
-2. Schreib `retry` nach demselben Muster. Andere Exceptions als die aus `on` fliegen sofort weiter.
-3. Speichere `shipping_cents` mit `@functools.cache` zwischen und lösch im Test die `type: ignore`-Kommentare.
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Add `@functools.wraps(func)` and `try`/`finally` to `timed`.
+2. Write `retry` following the same pattern. Exceptions other than those in `on` propagate immediately.
+3. Cache `shipping_cents` with `@functools.cache` and delete the `type: ignore` comments in the test.
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -20,4 +22,4 @@ uv run pytest
 uv run mypy --strict .
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 17` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 17` checks the starting point and the solution of this exercise.

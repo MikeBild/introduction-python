@@ -1,18 +1,20 @@
-# Mit asyncio warten, ohne zu blockieren
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach fragst du mit asyncio mehrere Dienste gleichzeitig ab, begrenzt Dauer und Parallelität und behandelst Fehler aus TaskGroups.
+# Wait with asyncio without blocking
 
-**Aufgabe:** Frag in stock_for den Bestand aller Produkte gleichzeitig mit TaskGroup und asyncio.timeout ab und begrenz in stock_limited die Parallelität mit Semaphore.
+**Learning goal:** After this, you query several services at once with asyncio, limit duration and concurrency, and handle TaskGroup errors.
 
-## Schritte
+**Task:** In stock_for, query the stock for all products at once with TaskGroup and asyncio.timeout, and limit concurrency in stock_limited with Semaphore.
 
-1. Schreib `stock_for` mit `asyncio.timeout` und `asyncio.TaskGroup`.
-2. Schreib `stock_limited` mit `asyncio.Semaphore`.
-3. Die Tests rufen `asyncio.run` auf, ein Zusatzpaket brauchst du nicht.
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Write `stock_for` with `asyncio.timeout` and `asyncio.TaskGroup`.
+2. Write `stock_limited` with `asyncio.Semaphore`.
+3. The tests call `asyncio.run`; you do not need an extra package.
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -20,4 +22,4 @@ uv run pytest
 uv run mypy --strict .
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 14` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 14` checks the starting point and the solution of this exercise.

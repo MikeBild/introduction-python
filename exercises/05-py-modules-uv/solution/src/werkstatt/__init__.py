@@ -1,4 +1,4 @@
-"""Werkstatt-Shop: das Paket bündelt Geld- und Bestellfunktionen."""
+"""Workshop shop: the package bundles money and order functions."""
 
 from werkstatt.money import format_cents
 from werkstatt.orders import order_total, parse_item

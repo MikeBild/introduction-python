@@ -1,19 +1,21 @@
-# Dateien mit pathlib und with sicher lesen und schreiben
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach liest und schreibst du Produkte und Bestellungen als JSON und CSV mit pathlib, with und expliziter Kodierung.
+# Read and write JSON and CSV safely with pathlib
 
-**Aufgabe:** Lies den Katalog aus data/products.json, speichere Bestellungen atomar als <id>.json und exportiere alle Positionen als CSV.
+**Learning goal:** After this, you will read and write products and orders as JSON and CSV with pathlib, with, and explicit encoding.
 
-## Schritte
+**Task:** Read the catalog from data/products.json, save orders atomically as <id>.json, and export all line items as CSV.
 
-1. Lies in `load_products` die Datei mit `path.open(encoding="utf-8")` und `json.load`.
-2. Schreib in `save_order` erst `<id>.tmp`, dann benenne mit `replace` um.
-3. Lies in `load_orders` alle `*.json` sortiert ein.
-4. Exportiere in `export_csv` eine Zeile je Position mit `csv.DictWriter` (Datei mit `newline=""` öffnen).
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Read the file in `load_products` with `path.open(encoding="utf-8")` and `json.load`.
+2. In `save_order`, write `<id>.tmp` first, then rename it with `replace`.
+3. Read all `*.json` files in sorted order in `load_orders`.
+4. Export one row per line item in `export_csv` with `csv.DictWriter` (open the file with `newline=""`).
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -21,4 +23,4 @@ uv run pytest
 uv run mypy --strict .
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 08` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 08` checks the starting point and the solution of this exercise.

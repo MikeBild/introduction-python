@@ -1,18 +1,20 @@
-# Generatoren liefern Werte erst auf Nachfrage
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach verarbeitest du große Bestelldateien mit Generatoren, itertools.batched und islice in konstantem Speicher.
+# Generators return values only on demand
 
-**Aufgabe:** Mach aus read_orders und with_status Generatoren, ergänz totals und running_total mit yield und teil Bestellungen mit itertools.batched in Pakete.
+**Learning goal:** After this, you will process large order files with generators, itertools.batched, and islice in constant memory.
 
-## Schritte
+**Task:** Turn read_orders and with_status into generators, add totals and running_total with yield, and split orders into batches with itertools.batched.
 
-1. Mach aus `read_orders` und `with_status` Generatoren.
-2. Schreib `totals` und `running_total` mit `yield`.
-3. Nutze `itertools.batched` in `in_batches` und `itertools.islice` in `first_paid`.
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Turn `read_orders` and `with_status` into generators.
+2. Write `totals` and `running_total` with `yield`.
+3. Use `itertools.batched` in `in_batches` and `itertools.islice` in `first_paid`.
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -20,4 +22,4 @@ uv run pytest
 uv run mypy --strict .
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 16` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 16` checks the starting point and the solution of this exercise.

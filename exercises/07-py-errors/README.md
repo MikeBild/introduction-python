@@ -1,19 +1,21 @@
-# Welche Exception fängst du, welche nicht?
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach baust du eine eigene Exception-Hierarchie für fachliche Fehler und fängst nur, was du sinnvoll behandeln kannst.
+# Which exception do you catch, and which do you not?
 
-**Aufgabe:** Wirf in place_order UnknownProduct und InsufficientStock, bewahr in parse_quantity die Ursache mit raise from und übersetz Fehler in Status Codes.
+**Learning goal:** Afterward, you will build your own exception hierarchy for domain errors and catch only what you can handle meaningfully.
 
-## Schritte
+**Task:** Throw UnknownProduct and InsufficientStock in place_order, preserve the cause in parse_quantity with raise from, and translate errors into status codes.
 
-1. Gib `UnknownProduct` und `InsufficientStock` eine lesbare Meldung.
-2. Wirf in `parse_quantity` bei ungültigem Text `InvalidQuantity(text) from error`.
-3. Wirf in `place_order` `UnknownProduct` (mit `from None`) und `InsufficientStock`.
-4. Übersetz in `handle_place_order` Fehler in Status Codes. Fang nur `OrderError` und Unterklassen.
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Give `UnknownProduct` and `InsufficientStock` a readable message.
+2. Raise `InvalidQuantity(text) from error` in `parse_quantity` for invalid text.
+3. Raise `UnknownProduct` (with `from None`) and `InsufficientStock` in `place_order`.
+4. Translate errors into status codes in `handle_place_order`. Catch only `OrderError` and its subclasses.
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -21,4 +23,4 @@ uv run pytest
 uv run mypy --strict .
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 07` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 07` checks the starting point and the solution of this exercise.

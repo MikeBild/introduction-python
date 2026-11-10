@@ -1,18 +1,20 @@
-# Bestellungen mit pandas auswerten statt mit Schleifen
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach flachst du verschachtelte Bestellungen mit pandas ab und berechnest Umsatz je Produkt, Monat und Kunde mit groupby.
+# Analyze orders with pandas instead of loops
 
-**Aufgabe:** Berechne in analysis.py revenueCents vektorisiert, filtere stornierte Bestellungen und werte Umsatz je Produkt, je Monat und je Kunde mit groupby aus.
+**Learning goal:** Afterward, you flatten nested orders with pandas and calculate revenue by product, month, and customer with groupby.
 
-## Schritte
+**Task:** In analysis.py, calculate revenueCents vectorized, filter canceled orders, and analyze revenue by product, month, and customer with groupby.
 
-1. Ergänze in `load_items` die Spalte `revenueCents`, vektorisiert ohne Schleife.
-2. Filtere in `completed` stornierte Bestellungen und Entwürfe mit einer Boolean-Maske.
-3. Schreib `revenue_by_product`, `revenue_by_month` und `customer_summary` mit `groupby`.
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Add the column `revenueCents` in `load_items`, vectorized without a loop.
+2. Filter out canceled orders and drafts in `completed` with a boolean mask.
+3. Write `revenue_by_product`, `revenue_by_month` and `customer_summary` with `groupby`.
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -20,4 +22,4 @@ uv run pytest
 uv run mypy --strict .
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 12` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 12` checks the starting point and the solution of this exercise.

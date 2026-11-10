@@ -1,6 +1,8 @@
+*English · [Deutsch](README.de.md)*
+
 # werkstatt-money
 
-Geldbeträge in ganzen Cent parsen und formatieren.
+Parse and format amounts of money in whole cents.
 
 ```python
 from werkstatt_money import format_cents, to_cents

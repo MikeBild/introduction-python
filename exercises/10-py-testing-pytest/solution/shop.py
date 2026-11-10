@@ -1,4 +1,4 @@
-"""Der Code, den du testest. Er ist fertig – schreib die Tests in test_shop.py."""
+"""The code you test. It is finished – write the tests in test_shop.py."""
 
 from collections.abc import Callable
 from dataclasses import dataclass
@@ -43,7 +43,7 @@ def place_order(
     now: Callable[[], datetime],
     next_id: Callable[[], str],
 ) -> PlacedOrder:
-    """Zeit und IDs kommen als Funktionen herein: so bleibt der Test deterministisch."""
+    """Time and IDs come in as functions: this keeps the test deterministic."""
     if not items:
         raise OrderError("an order needs at least one item")
     total = 0
@@ -58,7 +58,7 @@ def place_order(
 
 
 def format_cents(cents: int) -> str:
-    """Geld bleibt bis zur Ausgabe in ganzen Cent: 123456 → "1.234,56 €"."""
+    """Money stays in whole cents until output: 123456 → "1.234,56 €"."""
     sign = "-" if cents < 0 else ""
     euros, rest = divmod(abs(cents), 100)
     return f"{sign}{euros:_}".replace("_", ".") + f",{rest:02d} €"

@@ -1,8 +1,8 @@
-"""Alles in einer Datei. TODO: Teile sie in Module auf.
+"""Everything in one file. TODO: Split it into modules.
 
 - werkstatt/money.py   → format_cents
 - werkstatt/orders.py  → parse_item, order_total
-- werkstatt/cli.py     → nur noch main, importiert die beiden Module
+- werkstatt/cli.py     → only main, imports the two modules
 """
 
 import argparse
@@ -12,7 +12,7 @@ from collections.abc import Iterable
 def format_cents(cents: int) -> str:
     sign = "-" if cents < 0 else ""
     euros, rest = divmod(abs(cents), 100)
-    # Tausenderpunkt: 123456 Cent → "1.234,56 €"
+    # Thousands separator: 123456 cents → "1.234,56 €"
     return f"{sign}{euros:_}".replace("_", ".") + f",{rest:02d} €"
 
 
@@ -33,4 +33,4 @@ def main(argv: list[str] | None = None) -> int:
     return 0
 
 
-# TODO: Ergänze den Block, der main() nur beim direkten Start aufruft (__name__ == "__main__").
+# TODO: Add the block that calls main() only when started directly (__name__ == "__main__").

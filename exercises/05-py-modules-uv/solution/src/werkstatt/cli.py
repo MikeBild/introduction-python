@@ -1,4 +1,4 @@
-"""Kommandozeile: uv run werkstatt 2x1299 1x2499"""
+"""Command line: uv run werkstatt 2x1299 1x2499"""
 
 import argparse
 

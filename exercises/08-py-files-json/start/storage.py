@@ -1,4 +1,4 @@
-"""Produkte und Bestellungen als Dateien: pathlib, with, json und csv."""
+"""Products and orders as files: pathlib, with, json and csv."""
 
 import csv
 import json
@@ -28,25 +28,25 @@ class Order(TypedDict):
 
 
 def load_products(path: Path) -> list[Product]:
-    """Liest eine JSON-Datei mit einer Liste von Produkten."""
+    """Reads a JSON file with a list of products."""
     # TODO: with path.open(encoding="utf-8") as file: ... json.load(file)
     raise NotImplementedError
 
 
 def save_order(directory: Path, order: Order) -> Path:
-    """Schreibt eine Bestellung als <id>.json und gibt den Pfad zurück."""
-    # TODO: Verzeichnis mit mkdir(parents=True, exist_ok=True) anlegen
-    # TODO: erst in <id>.tmp schreiben, dann mit replace() umbenennen – so liest niemand halbe Dateien
+    """Writes an order as <id>.json and returns the path."""
+    # TODO: create the directory with mkdir(parents=True, exist_ok=True)
+    # TODO: write to <id>.tmp first, then rename with replace() – so nobody reads half-written files
     raise NotImplementedError
 
 
 def load_orders(directory: Path) -> list[Order]:
-    """Liest alle *.json eines Verzeichnisses, sortiert nach Dateiname."""
-    # TODO: sorted(directory.glob("*.json")) und json.loads(path.read_text(...))
+    """Reads all *.json files of a directory, sorted by file name."""
+    # TODO: sorted(directory.glob("*.json")) and json.loads(path.read_text(...))
     raise NotImplementedError
 
 
 def export_csv(orders: list[Order], path: Path) -> None:
-    """Eine Zeile je Position mit orderId, customerId, productId, quantity, priceCents."""
-    # TODO: csv.DictWriter; die Datei mit newline="" öffnen
+    """One row per line item with orderId, customerId, productId, quantity, priceCents."""
+    # TODO: csv.DictWriter; open the file with newline=""
     raise NotImplementedError

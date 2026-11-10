@@ -1,19 +1,21 @@
-# Im Notebook erkunden, im Modul festhalten
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach nutzt du JupyterLab für Erkundung, verschiebst die Logik in ein getestetes Modul und führst das Notebook in der CI aus.
+# Explore in notebooks, keep logic in modules
 
-**Aufgabe:** Verschieb die Funktionen aus bestellungen.ipynb nach analysis.py, ruf sie im Notebook nur noch auf und commite das Notebook ohne Outputs.
+**Learning goal:** After this, you use JupyterLab for exploration, move logic into a tested module, and run the notebook in CI.
 
-## Schritte
+**Task:** Move the functions from bestellungen.ipynb to analysis.py, call them from the notebook only, and commit the notebook without outputs.
 
-1. Starte JupyterLab mit `uv run jupyter lab` und öffne `start/bestellungen.ipynb`.
-2. Verschieb `load_items` und die Auswertungen nach `analysis.py` und annotiere sie.
-3. Importiere die Funktionen im Notebook und lösch alle Zellen mit `def`.
-4. Prüf mit „Restart Kernel and Run All Cells“ und lösch die Outputs vor dem Commit.
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Start JupyterLab with `uv run jupyter lab` and open `start/bestellungen.ipynb`.
+2. Move `load_items` and the analyses to `analysis.py` and annotate them.
+3. Import the functions in the notebook and delete all cells with `def`.
+4. Check with “Restart Kernel and Run All Cells” and delete the outputs before the commit.
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -21,4 +23,4 @@ uv run pytest
 uv run mypy --strict .
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 13` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 13` checks the starting point and the solution of this exercise.

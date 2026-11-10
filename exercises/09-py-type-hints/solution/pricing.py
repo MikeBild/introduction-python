@@ -1,4 +1,4 @@
-"""Rechnungssummen mit Typ-Hinweisen, die mypy --strict prüft."""
+"""Invoice totals with type hints that mypy --strict checks."""
 
 from typing import Literal, NewType, TypedDict
 

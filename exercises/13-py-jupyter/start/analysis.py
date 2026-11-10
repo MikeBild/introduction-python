@@ -1,8 +1,8 @@
-"""Hierher gehört die Logik aus dem Notebook – getestet und typgeprüft.
+"""The logic from the notebook belongs here – tested and type-checked.
 
-TODO: load_items aus dem Notebook übernehmen und mit Typ-Hinweisen versehen.
-TODO: revenue_by_product, revenue_by_month und customer_summary ergänzen
-      (wie in der Lektion zu pandas, Übung 12).
+TODO: Take over load_items from the notebook and add type hints.
+TODO: Add revenue_by_product, revenue_by_month and customer_summary
+      (as in the lesson on pandas, exercise 12).
 """
 
 from pathlib import Path

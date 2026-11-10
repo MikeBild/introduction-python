@@ -1,4 +1,4 @@
-"""Die Bestellung als Dataclass mit Regeln für Status und Positionen."""
+"""The order as a dataclass with rules for status and line items."""
 
 from dataclasses import dataclass, field
 from enum import StrEnum

@@ -1,4 +1,4 @@
-"""Bestellungen mit pandas auswerten: eine Zeile je Position, dann gruppieren."""
+"""Analyze orders with pandas: one row per line item, then group."""
 
 import json
 from pathlib import Path
@@ -7,36 +7,36 @@ import pandas as pd
 
 
 def load_items(path: Path) -> pd.DataFrame:
-    """Flacht die verschachtelten Bestellungen ab: eine Zeile je Position."""
+    """Flattens the nested orders: one row per line item."""
     orders = json.loads(path.read_text(encoding="utf-8"))
     items = pd.json_normalize(
         orders, record_path="items", meta=["id", "customerId", "status", "createdAt"]
     )
     items = items.rename(columns={"id": "orderId"})
     items["createdAt"] = pd.to_datetime(items["createdAt"])
-    # TODO: Spalte revenueCents = quantity × priceCents, ohne Schleife (vektorisiert)
+    # TODO: column revenueCents = quantity × priceCents, without a loop (vectorized)
     return items
 
 
 def completed(items: pd.DataFrame) -> pd.DataFrame:
-    """Nur Bestellungen, die zählen: stornierte und Entwürfe fallen weg."""
-    # TODO: Boolean-Maske mit items["status"].isin([...]) und ~ für „nicht“
+    """Only orders that count: cancelled ones and drafts are dropped."""
+    # TODO: boolean mask with items["status"].isin([...]) and ~ for “not”
     raise NotImplementedError
 
 
 def revenue_by_product(items: pd.DataFrame) -> pd.Series:
-    """Umsatz in Cent je Produkt, absteigend."""
-    # TODO: completed(...).groupby("productId")["revenueCents"].sum(), dann sort_values
+    """Revenue in cents per product, descending."""
+    # TODO: completed(...).groupby("productId")["revenueCents"].sum(), then sort_values
     raise NotImplementedError
 
 
 def revenue_by_month(items: pd.DataFrame) -> pd.Series:
-    """Umsatz in Cent je Monat im Format 2026-07."""
-    # TODO: Monat mit .dt.strftime("%Y-%m") bilden und danach gruppieren
+    """Revenue in cents per month in the format 2026-07."""
+    # TODO: build the month with .dt.strftime("%Y-%m") and group by it
     raise NotImplementedError
 
 
 def customer_summary(items: pd.DataFrame) -> pd.DataFrame:
-    """Je Kundin: Anzahl Bestellungen (orders) und Umsatz (revenueCents), nach Umsatz sortiert."""
+    """Per customer: number of orders (orders) and revenue (revenueCents), sorted by revenue."""
     # TODO: groupby("customerId").agg(orders=("orderId", "nunique"), revenueCents=(...))
     raise NotImplementedError

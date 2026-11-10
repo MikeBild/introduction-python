@@ -76,7 +76,7 @@ def test_retry_does_not_hide_other_errors() -> None:
 
 
 def test_shipping_cents_is_cached() -> None:
-    shipping_cents.cache_clear()  # type: ignore[attr-defined]  # TODO: wird nach dem Caching überflüssig
+    shipping_cents.cache_clear()  # type: ignore[attr-defined]  # TODO: becomes unnecessary after caching
     assert shipping_cents("DE") == 490
     assert shipping_cents("DE") == 490
     assert shipping_cents.cache_info().hits == 1  # type: ignore[attr-defined]

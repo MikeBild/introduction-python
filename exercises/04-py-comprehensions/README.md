@@ -1,18 +1,20 @@
-# Comprehensions statt Schleifen mit append
+*English · [Deutsch](README.de.md)*
 
-**Lernziel:** Danach schreibst du Auswertungen über Bestellungen als List-, Dict- und Set-Comprehensions und Generator Expressions.
+# Comprehensions instead of loops with append
 
-**Aufgabe:** Ersetz in reports.py jede Schleife mit append durch eine Comprehension und sortier die größten Bestellungen mit sorted und key.
+**Learning goal:** After this, you write order reports as list, dict, and set comprehensions and generator expressions.
 
-## Schritte
+**Task:** In reports.py, replace every loop with append with a comprehension, and sort the largest orders with sorted and key.
 
-1. Ersetz in `order_total` und `totals_by_order` die Schleifen durch `sum(...)` und eine Dict Comprehension.
-2. Schreib `open_order_ids`, `products_sold` und `all_items` als Comprehensions.
-3. Sortier in `top_orders` mit `sorted`, `key` und `reverse=True`.
+## Steps
 
-Die Tests in `start/` sind zuerst übersprungen. Entferne die Zeile `pytestmark = pytest.mark.skip(...)`, sobald du mit der Übung beginnst.
+1. Replace the loops in `order_total` and `totals_by_order` with `sum(...)` and a dict comprehension.
+2. Write `open_order_ids`, `products_sold` and `all_items` as comprehensions.
+3. Sort in `top_orders` with `sorted`, `key` and `reverse=True`.
 
-## Prüfen
+The tests in `start/` are skipped at first. Remove the line `pytestmark = pytest.mark.skip(...)` as soon as you start the exercise.
+
+## Check
 
 ```bash
 cd start
@@ -20,4 +22,4 @@ uv run pytest
 uv run mypy --strict .
 ```
 
-Eine mögliche Lösung steht in [`solution/`](solution/). Vom Hauptverzeichnis aus prüft `uv run python scripts/check.py 04` Startpunkt und Lösung dieser Übung.
+One possible solution is in [`solution/`](solution/). From the root folder, `uv run python scripts/check.py 04` checks the starting point and the solution of this exercise.

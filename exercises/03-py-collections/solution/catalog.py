@@ -1,9 +1,9 @@
-"""Produkte und Bestellungen als dict, list, tuple und set."""
+"""Products and orders as dict, list, tuple and set."""
 
 from collections import Counter
 
-# Produkte und Bestellungen kommen als JSON-artige dicts. Was TypedDict bedeutet,
-# zeigt die Lektion zu Typ-Hinweisen; hier reicht: so sehen die dicts aus.
+# Products and orders arrive as JSON-like dicts. What TypedDict means
+# is shown in the lesson on type hints; here it is enough to know what the dicts look like.
 from typing import TypedDict
 
 
@@ -26,7 +26,7 @@ class Order(TypedDict):
 
 
 def index_by_id(products: list[Product]) -> dict[str, Product]:
-    """dict für schnellen Zugriff per ID statt Suche in der Liste."""
+    """dict for fast access by ID instead of searching the list."""
     index: dict[str, Product] = {}
     for product in products:
         index[product["id"]] = product
@@ -34,7 +34,7 @@ def index_by_id(products: list[Product]) -> dict[str, Product]:
 
 
 def low_stock(products: list[Product], threshold: int = 3) -> list[str]:
-    """Namen der Produkte mit wenig Bestand, alphabetisch."""
+    """Names of the products with low stock, alphabetically."""
     names = []
     for product in products:
         if product["stock"] < threshold:
@@ -43,7 +43,7 @@ def low_stock(products: list[Product], threshold: int = 3) -> list[str]:
 
 
 def customer_ids(orders: list[Order]) -> set[str]:
-    """Jede Kundin nur einmal: ein set entfernt Duplikate."""
+    """Every customer only once: a set removes duplicates."""
     ids = set()
     for order in orders:
         ids.add(order["customerId"])
@@ -51,7 +51,7 @@ def customer_ids(orders: list[Order]) -> set[str]:
 
 
 def quantities_by_product(orders: list[Order]) -> Counter[str]:
-    """Wie oft wurde jedes Produkt bestellt?"""
+    """How often was each product ordered?"""
     counts: Counter[str] = Counter()
     for order in orders:
         for item in order["items"]:
@@ -60,7 +60,7 @@ def quantities_by_product(orders: list[Order]) -> Counter[str]:
 
 
 def price_list(products: list[Product]) -> frozendict[str, int]:
-    """Unveränderliche Preisliste (frozendict ist seit Python 3.15 eingebaut)."""
+    """Immutable price list (frozendict is built in since Python 3.15)."""
     prices = {}
     for product in products:
         prices[product["id"]] = product["priceCents"]
