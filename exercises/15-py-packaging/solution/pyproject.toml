@@ -1,7 +1,7 @@
 [project]
 name = "werkstatt-money"
 version = "1.0.0"
-description = "Geldbeträge in ganzen Cent parsen und formatieren"
+description = "Parse and format amounts of money in whole cents"
 readme = "README.md"
 license = "MIT"
 authors = [{ name = "Werkstatt-Shop" }]

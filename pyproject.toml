@@ -1,7 +1,7 @@
 [project]
 name = "introduction-python"
 version = "2026.10.0"
-description = "Übungen zum Workshop Python mit uv, pytest, mypy und Flask"
+description = "Exercises for the Python workshop with uv, pytest, mypy, and Flask"
 readme = "README.md"
 requires-python = ">=3.15"
 dependencies = ["flask>=3.1.3"]

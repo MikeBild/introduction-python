@@ -1,7 +1,7 @@
 [project]
 name = "werkstatt"
 version = "0.1.0"
-description = "Werkstatt-Shop: Summen von Bestellungen auf der Kommandozeile"
+description = "Workshop shop: order totals on the command line"
 requires-python = ">=3.15"
 dependencies = []
 
