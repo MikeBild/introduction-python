@@ -107,16 +107,16 @@ For asyncio, files, JSON, CSV, generators and decorators the standard library is
 
 ## Workshop and slides
 
-- Workshop: [“Python for developers with uv, pytest and Flask”](https://workshops.mikebild.dev/w/python/remote/)
-- Slides: [slides.mikebild.dev/introduction-python](https://slides.mikebild.dev/introduction-python.html)
-- PDF: [slides.mikebild.dev/introduction-python.pdf](https://slides.mikebild.dev/introduction-python.pdf)
-- Articles on mikebild.dev (in German):
-  - [Fortgeschrittenes Python: Decorators, Magic Methods und Generatoren](https://www.mikebild.dev/de/blog/python-advanced-decorators-generatoren/)
-  - [Funktionale Muster in Python: Comprehensions, itertools und functools](https://www.mikebild.dev/de/blog/funktionale-muster-in-python/)
-  - [Web-APIs mit Flask: von der App zur JSON-API](https://www.mikebild.dev/de/blog/web-apis-mit-flask/)
-  - [Flask-Apps testen: der Test-Client und zuverlässige Endpoints](https://www.mikebild.dev/de/blog/flask-apps-testen/)
-  - [Daten einlesen in Python: CSV, JSON, Excel und Datenbank](https://www.mikebild.dev/de/blog/python-daten-einlesen/)
-  - [Datenanalyse mit NumPy, Pandas und Matplotlib](https://www.mikebild.dev/de/blog/datenanalyse-mit-pandas/)
+- Workshop (held in German): [“Python for developers with uv, pytest, and Flask”](https://workshops.mikebild.dev/w/python/remote/)
+- Slides: [slides.mikebild.dev/introduction-python.en](https://slides.mikebild.dev/introduction-python.en.html)
+- PDF: [introduction-python.en.pdf](https://objects.upraft.mikebild.info/site-media/mikebild/decks/introduction-python/introduction-python.en.pdf)
+- Posts on mikebild.dev:
+  - [Advanced Python: Decorators, Magic Methods and Generators](https://www.mikebild.dev/en/blog/advanced-python-decorators-magic-methods-generators/)
+  - [Functional Patterns in Python: Comprehensions, itertools and functools](https://www.mikebild.dev/en/blog/functional-patterns-in-python/)
+  - [Web APIs with Flask: From the App to a JSON API](https://www.mikebild.dev/en/blog/web-apis-with-flask/)
+  - [Testing Flask Apps: The Test Client and Reliable Endpoints](https://www.mikebild.dev/en/blog/testing-flask-apps/)
+  - [Reading Data in Python: CSV, JSON, Excel and Databases](https://www.mikebild.dev/en/blog/reading-data-in-python/)
+  - [Data Analysis with NumPy, Pandas, and Matplotlib](https://www.mikebild.dev/en/blog/data-analysis-with-numpy-pandas-and-matplotlib/)
 
 ## Archive
 
