@@ -109,8 +109,8 @@ For asyncio, files, JSON, CSV, generators and decorators the standard library is
 
 - Workshop (held in German): [“Python for developers with uv, pytest, and Flask”](https://workshops.mikebild.dev/w/python/remote/)
 - Slides: [slides.mikebild.dev/introduction-python.en](https://slides.mikebild.dev/introduction-python.en.html)
-- PDF: [introduction-python.en.pdf](https://objects.upraft.mikebild.info/site-media/mikebild/decks/introduction-python/introduction-python.en.pdf)
-- Video: [introduction-python.en.mp4](https://objects.upraft.mikebild.info/site-media/mikebild/decks/introduction-python/introduction-python.en.mp4)
+- PDF: [introduction-python.en.pdf](https://media.mikebild.dev/site/mikebild/decks/introduction-python/introduction-python.en.pdf)
+- Video: [introduction-python.en.mp4](https://media.mikebild.dev/site/mikebild/decks/introduction-python/introduction-python.en.mp4)
 - Posts on mikebild.dev:
   - [Advanced Python: Decorators, Magic Methods and Generators](https://www.mikebild.dev/en/blog/advanced-python-decorators-magic-methods-generators/)
   - [Functional Patterns in Python: Comprehensions, itertools and functools](https://www.mikebild.dev/en/blog/functional-patterns-in-python/)
